@@ -85,4 +85,7 @@ class MainController extends Controller
     public function userProfile(){
         return view('profile');
     }
+    public function authenticator(){
+        return view('authenticator');
+    }
 }

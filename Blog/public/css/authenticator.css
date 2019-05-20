@@ -1,0 +1,90 @@
+@font-face {
+  font-family: "Lato-regular";
+  src: url("/fonts/lato/lato-regular.eot");
+  src: url("/fonts/lato/lato-regular.eot?#iefix") format("embedded-opentype"), url("/fonts/lato/lato-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Lato-bold";
+  src: url("/fonts/lato/lato-bold.eot");
+  src: url("/fonts/lato/lato-bold.eot?#iefix") format("embedded-opentype"), url("/fonts/lato/lato-bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Lato-Light";
+  src: url("/fonts/lato/lato-Light.eot");
+  src: url("/fonts/lato/lato-Light.eot?#iefix") format("embedded-opentype"), url("/fonts/lato/lato-Light.woff") format("woff");
+}
+
+body {
+  font-family: "lato-regular";
+  color: #919191;
+  background-image: url("/img/fondo.png");
+  background-size: cover;
+}
+
+body header {
+  width: 100%;
+  color: #fff;
+}
+
+body header nav img {
+  width: 25%;
+}
+
+body header nav a {
+  color: #fff;
+}
+
+body header nav ul li {
+  display: inline-block;
+}
+
+body header nav ul li a {
+  color: #fff;
+}
+
+body .h1 {
+  font-family: "lato-bold";
+}
+
+body .main-text,
+body .btn-red {
+  color: #a0a0a0;
+  font-size: 1rem;
+}
+
+body .main-text.bold,
+body .bold.btn-red {
+  font-family: "lato-bold";
+}
+
+body .main-text.light,
+body .light.btn-red {
+  font-family: "lato-light";
+}
+
+body .btn-red {
+  background-color: #b2093d;
+  color: #fff;
+}
+
+body .user-icon {
+  position: absolute;
+  top: -4rem;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 4rem;
+  border: solid #a0a0a0 1px;
+  width: 7rem;
+  height: 7rem;
+  background-color: #fff;
+  color: #a0a0a0;
+}
+
+body #formRegister {
+  display: none;
+}
+
