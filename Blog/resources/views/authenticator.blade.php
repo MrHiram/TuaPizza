@@ -66,22 +66,7 @@
             </div>
         </div>
     </section>
-    <footer>
-        <div class="container-fluid">
-            <div class="row justify-content-center mt-5">
-                <div class="col-lg-6 col-md-6 col-sd-12 text-center">
-                    <a href=""><img src="img/logo.png" class="my-3" alt=""></a>
-                    <ul class="p-0">
-                        <li class='bg-light rounded-circle mx-4 mt-3'><i class="fab fa-twitter mt-2" alt=""></i></li>
-                        <li class='bg-light rounded-circle mx-4 mt-3'><i class="fab fa-instagram mt-2" alt=""></i></li>
-                        <li class='bg-light rounded-circle mx-4 mt-3'><i class="fab fa-facebook-f mt-2" alt=""></i></li>
-                        <li class='bg-light rounded-circle mx-4 mt-3'><i class="fab fa-google mt-2" alt=""></i></li>
-                    </ul>
-                    <p class="my-3 main-text">Todos los derechos reservados</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    
     <script>
         $('document').ready(function(){
             $('#register').click(function(){

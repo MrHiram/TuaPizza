@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="card col p-0 my-5 mx-5">
-                <img class="card-img-top" src="{{url('/img/pizza-2.jpg')}}" alt="">
+                <img class="card-img-top" src="{{url('/img/pizza-3.jpg')}}" alt="">
                 <div class="card-body">
                     <h4 class="h4 card-title">Mariscaza</h4>
                     <p class="card-text main-text medium text-dark">TuaPizza ha descubierto el secreto al unir los mariscos y la pizza. Es una exposión de sabor en tu boca.</p>
@@ -62,7 +62,7 @@
             <div class="card col p-0 my-5">
                 <img class="card-img-top" src="{{url('/img/pizza-2.jpg')}}" alt="">
                 <div class="card-body">
-                    <h4 class="h4 card-title">Franbuesa Fusión</h4>
+                    <h4 class="h4 card-title">Hamburpizza</h4>
                     <p class="card-text main-text medium text-dark">¿Hamburguesas o pizzas? TuaPizza ha combinado las comidas rápidas favoritas de nuestros clientes para un sabor único.</p>
                     <button class="btn btn-red col-12 mt-3">Probar</button>
                 </div>
