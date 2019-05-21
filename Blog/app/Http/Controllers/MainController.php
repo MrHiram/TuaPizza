@@ -88,4 +88,7 @@ class MainController extends Controller
     public function authenticator(){
         return view('authenticator');
     }
+    public function menu(){
+        return view('menu');
+    }
 }

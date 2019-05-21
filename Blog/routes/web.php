@@ -17,4 +17,5 @@ Route::get('/', function () {
 });
 Route::get('/profile', 'MainController@userProfile');
 Route::get('/signin', 'MainController@authenticator');
+Route::get('/menu', 'MainController@menu');
 ?>

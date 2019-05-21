@@ -17,15 +17,30 @@
 }
 
 body {
+  /****** General Styles *******/
   font-family: "lato-regular";
   color: #919191;
+  /****** Authentication Styles *******/
+  /****** Menu Styles *******/
+}
+
+body.bg--img__wall {
   background-image: url("/img/fondo.png");
   background-size: cover;
+}
+
+body .bg--grey__light {
+  background-color: #cccccc;
 }
 
 body header {
   width: 100%;
   color: #fff;
+}
+
+body header.bg--img__table {
+  background-image: url("/img/mesa.png");
+  background-size: cover;
 }
 
 body header nav img {
@@ -44,8 +59,26 @@ body header nav ul li a {
   color: #fff;
 }
 
+body header hr {
+  border-top: 1px solid #fff;
+}
+
 body .h1 {
   font-family: "lato-bold";
+}
+
+body .h1.large {
+  font-size: 5rem;
+}
+
+body .h3 {
+  font-family: "lato-bold";
+  color: #ff1d25;
+  font-size: 2rem;
+}
+
+body .h4 {
+  font-size: 1.8rem;
 }
 
 body .main-text,
@@ -64,9 +97,38 @@ body .light.btn-red {
   font-family: "lato-light";
 }
 
+body .main-text.medium,
+body .medium.btn-red {
+  font-size: 1.25rem;
+}
+
+body .secondary-text {
+  font-family: "lato-light";
+  color: #fff;
+  font-size: 1.75rem;
+}
+
+body .secondary-text.padding-bot {
+  padding: 0 0 6rem 0;
+}
+
 body .btn-red {
   background-color: #b2093d;
   color: #fff;
+}
+
+body footer {
+  background: #000;
+}
+
+body footer ul li {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+}
+
+body footer ul li i {
+  font-size: 2rem;
 }
 
 body .user-icon {
