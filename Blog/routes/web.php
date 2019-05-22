@@ -13,7 +13,7 @@
 
 /* Routes */
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 Route::get('/profile', 'MainController@userProfile');
 Route::get('/signin', 'MainController@authenticator');
