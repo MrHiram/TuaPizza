@@ -1,0 +1,32 @@
+body{
+    .btn{
+
+        &.width{
+            width: 60px;
+            height: 60px;
+        }
+    }
+    ul{
+        .height{
+            line-height: 0.5rem;
+            .fa-circle{
+                font-size: 0.5rem;
+                color: $greyLight;
+                &.active{
+                    color: $darkGrey;
+                }
+            }
+        }
+    }
+    .step-indicator{
+        line-height: 1rem;
+        color: $greyLight;
+        font-size: 1rem;
+        span{
+            font-size: 1.75rem;
+            line-height: 2.12rem;
+            color: $darkGrey;
+            font-family: 'lato-bold';
+        }
+    }
+}

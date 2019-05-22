@@ -252,3 +252,34 @@ body #formRegister {
   display: none;
 }
 
+body .btn.width {
+  width: 60px;
+  height: 60px;
+}
+
+body ul .height {
+  line-height: 0.5rem;
+}
+
+body ul .height .fa-circle {
+  font-size: 0.5rem;
+  color: #cccccc;
+}
+
+body ul .height .fa-circle.active {
+  color: #808080;
+}
+
+body .step-indicator {
+  line-height: 1rem;
+  color: #cccccc;
+  font-size: 1rem;
+}
+
+body .step-indicator span {
+  font-size: 1.75rem;
+  line-height: 2.12rem;
+  color: #808080;
+  font-family: "lato-bold";
+}
+
