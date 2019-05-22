@@ -38,57 +38,75 @@
                 </ul>
             </div>
         </nav>
-
+    </header>
     <section>
     <div class="container-fluid">
         <div class="card col-12 col-lg-10 offset-lg-1 p-0 flex-row flex-wrap">
-            <div class="col-12 col-md-6 border-right text-center py-5">
+            <div class="col-12 col-md-6 border-right text-center py-5 overflow-hidden">
                 <h3 class="h3"> Empieza a Crear</h3>
-                <img src="img/plain-pizza.jpg" class="img-fluid w-100" alt="">
-                <label for="" class="main-text bold large text-dark">Monto a Cancelar</label>
+                <div class="container-pizza d-block text-left">
+                    <img src="img/plain-pizza.jpg" class="img-fluid position-absolute w-100" alt="" style="z-index: 0">
+                    <img src="img/mozarrella.png" class="img-fluid position-absolute w-100" alt="" style="z-index: 1" id="mozarrella">
+                    <img src="img/cheddar.png" class="img-fluid position-absolute w-100" alt="" style="z-index: 1" id="cheddar">
+                    <img src="img/tomates.png" class="img-fluid position-absolute w-100" alt="" style="z-index: 2" id="tomates">
+                    <img src="img/peperoni.png" class="img-fluid position-absolute w-100" alt="" style="z-index: 3" id="peperoni">
+                    <img src="img/pepinillos.png" class="img-fluid position-absolute w-100" alt="" style="z-index: 4" id="pepinillos">
+                    <img src="img/salchicha.png" class="img-fluid position-absolute w-100" alt="" style="z-index: 5" id="salchicha">
+                    <img src="img/carne_molida.png" class="img-fluid position-absolute w-100" alt="" style="z-index: 6" id="carnemolida">
+                    <img src="img/greenPepper.png" class="img-fluid position-absolute w-100" alt="" style="z-index: 7" id="greenpepper">
+                    <img src="img/mushroom.png" class="img-fluid position-absolute w-100" alt="" style="z-index: 8" id="mushroom">
+                    <img src="img/bacon.png" class="img-fluid position-absolute w-100" alt="" style="z-index: 9" id="bacon">
+                    <img src="img/cebolla.png" class="img-fluid position-absolute w-100" alt="" style="z-index: 10" id="cebolla">
+                    <img src="img/chicken.png" class="img-fluid position-absolute w-100" alt="" style="z-index: 11" id="chicken">
+                    <img src="img/manzana.png" class="img-fluid position-absolute w-100" alt="" style="z-index: 12" id="manzana">
+                    <img src="img/piña.png" class="img-fluid position-absolute w-100" alt="" style="z-index: 13" id="pina">
+                    <img src="img/limones.png" class="img-fluid position-absolute w-100" alt="" style="z-index: 14" id="limones">
+                    <img src="img/olives.png" class="img-fluid position-absolute w-100" alt="" style="z-index: 15" id="olives">
+                    <img src="img/basil.png" class="img-fluid position-absolute w-100" alt="" style="z-index: 16" id="basil">
+                    <img src="img/cilantro.png" class="img-fluid position-absolute w-100" alt="" style="z-index: 17" id="cilantro">
+                </div>
+                <label for="" class="main-text bold large text-dark te">Monto a Cancelar</label>
                 <div class="card col-6 offset-3 text-left">
                     <p class="main-text text-dark my-2">$5</p>
                 </div>
             </div>
-            
             <div class="col-12 col-md-6 p-5">
                 <label class="main-text medium text-dark mb-0">Elegí tus vegetales favoritos</label>
                 <hr class="border-top my-2">
                 <ul class="d-flex flex-wrap list-unstyled">
-                    <li class="p-0 mx-4 my-2"><button class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-green-peppers.png" alt=""></button></li>
-                    <li class="p-0 mx-4 my-2"><button class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-olivas.png" alt=""></button></li>
-                    <li class="p-0 mx-4 my-2"><button class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-hongos.png" alt=""></button></li>
-                    <li class="p-0 mx-4 my-2"><button class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-pepinillo.png" alt=""></button></li>
-                    <li class="p-0 mx-4 my-2"><button class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-cebolla.png" alt=""></button></li>                    
-                    <li class="p-0 mx-4 my-2"><button class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-maiz.png" alt=""></button></li>
+                    <li class="p-0 mx-4 my-2"><button id="greenpepper" class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-green-peppers.png" alt=""></button></li>
+                    <li class="p-0 mx-4 my-2"><button id="olives" class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-olivas.png" alt=""></button></li>
+                    <li class="p-0 mx-4 my-2"><button id="mushroom" class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-hongos.png" alt=""></button></li>
+                    <li class="p-0 mx-4 my-2"><button id="pepinillos" class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-pepinillo.png" alt=""></button></li>
+                    <li class="p-0 mx-4 my-2"><button id="cebolla" class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-cebolla.png" alt=""></button></li>                    
                 </ul>
                 <label class="main-text medium text-dark mb-0">Elegí tus frutas favoritas</label>
                 <hr class="border-top my-2">
                 <ul class="d-flex flex-wrap list-unstyled">
-                    <li class="p-0 mx-4 my-2"><button class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-tomate.png" alt=""></button></li>
-                    <li class="p-0 mx-4 my-2"><button class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-limon.png" alt=""></button></li>
-                    <li class="p-0 mx-4 my-2"><button class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-manzanas.png" alt=""></button></li>
-                    <li class="p-0 mx-4 my-2"><button class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-pina.png" alt=""></button></li>
+                    <li class="p-0 mx-4 my-2"><button id="tomates" class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-tomate.png" alt=""></button></li>
+                    <li class="p-0 mx-4 my-2"><button id="limones" class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-limon.png" alt=""></button></li>
+                    <li class="p-0 mx-4 my-2"><button id="manzana" class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-manzanas.png" alt=""></button></li>
+                    <li class="p-0 mx-4 my-2"><button id="pina" class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-pina.png" alt=""></button></li>
                 </ul>
                 <label class="main-text medium text-dark mb-0">Elegí tus especies favoritas</label>
                 <hr class="border-top my-2">
                 <ul class="d-flex flex-wrap list-unstyled">
-                    <li class="p-0 mx-4 my-2"><button class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-albahaca.png" alt=""></button></li>
-                    <li class="p-0 mx-4 my-2"><button class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-culantro.png" alt=""></button></li>
+                    <li class="p-0 mx-4 my-2"><button id="basil" class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-albahaca.png" alt=""></button></li>
+                    <li class="p-0 mx-4 my-2"><button id="cilantro" class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-culantro.png" alt=""></button></li>
                 </ul>
                 <label class="main-text medium text-dark mb-0">Elegí tus carnes favoritas</label>
                 <hr class="border-top my-2">
                 <ul class="d-flex flex-wrap list-unstyled">
-                    <li class="p-0 mx-4 my-2"><button class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-pollo.png" alt=""></button></li>
-                    <li class="p-0 mx-4 my-2"><button class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-carneMolida.png" alt=""></button></li>
-                    <li class="p-0 mx-4 my-2"><button class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-bacon.png" alt=""></button></li>
-                    <li class="p-0 mx-4 my-2"><button class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-salchicha.png" alt=""></button></li>
+                    <li class="p-0 mx-4 my-2"><button id="chicken" class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-pollo.png" alt=""></button></li>
+                    <li class="p-0 mx-4 my-2"><button id="carnemolida" class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-carneMolida.png" alt=""></button></li>
+                    <li class="p-0 mx-4 my-2"><button id="bacon" class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-bacon.png" alt=""></button></li>
+                    <li class="p-0 mx-4 my-2"><button id="salchicha" class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-salchicha.png" alt=""></button></li>
                 </ul>
                 <label class="main-text medium text-dark mb-0">Elegí tus queso favorito</label>
                 <hr class="border-top my-2">
                 <ul class="d-flex flex-wrap list-unstyled">
-                    <li class="p-0 mx-4 my-2"><button class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-cheddar.png" alt=""></button></li>
-                    <li class="p-0 mx-4 my-2"><button class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-mozarrella.png" alt=""></button></li>
+                    <li class="p-0 mx-4 my-2"><button id="cheddar" class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-cheddar.png" alt=""></button></li>
+                    <li class="p-0 mx-4 my-2"><button id="mozarrella" class="btn width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-mozarrella.png" alt=""></button></li>
                 </ul>
             </div>
             <div class="col-12 d-flex justify-content-between"> 
@@ -101,7 +119,10 @@
                     </ul>
                     <p class="step-indicator">Siguiente paso <br><span>Bebidas</span></p>
                 </div>
-                <button class="btn"><i class="fas fa-chevron-right main-text large"></i></button>
+                <div>
+                    <button class="btn"><i class="fas fa-chevron-left main-text large d-none"></i></button>
+                    <button class="btn"><i class="fas fa-chevron-right main-text large"></i></button>
+                </div>
             </div>
         </div>
     </section>

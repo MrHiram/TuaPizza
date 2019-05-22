@@ -270,6 +270,10 @@ body ul .height .fa-circle.active {
   color: #808080;
 }
 
+body .container-pizza {
+  height: 36rem;
+}
+
 body .step-indicator {
   line-height: 1rem;
   color: #cccccc;
