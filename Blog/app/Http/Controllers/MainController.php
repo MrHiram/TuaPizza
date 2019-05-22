@@ -91,4 +91,7 @@ class MainController extends Controller
     public function menu(){
         return view('menu');
     }
+    public function about(){
+        return view('about');
+    }
 }
