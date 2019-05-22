@@ -1,5 +1,5 @@
-$break-small: 720px;
-$break-large: 1024px;
+$break-small: 767px;
+$break-large: 992px;
 @mixin respond-to($media) {
     @if $media==handhelds {
         @media only screen and (max-width: $break-small) {

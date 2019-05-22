@@ -1,0 +1,249 @@
+body {
+  font-family: "lato-regular";
+  color: #919191;
+}
+
+body.bg--img__wall {
+  background-image: url("/img/fondo.png");
+  background-size: cover;
+}
+
+body .bg--grey__light {
+  background-color: #cccccc;
+}
+
+body header {
+  width: 100%;
+  color: #fff;
+}
+
+body header.bg--img__table {
+  background-image: url("/img/mesa.png");
+  background-size: cover;
+}
+
+body header.bg--img__wall {
+  background-image: url("/img/fondo.png");
+  background-size: cover;
+}
+
+body header nav img {
+  width: 25%;
+}
+
+body header nav a {
+  color: #fff;
+}
+
+body header nav ul li {
+  display: inline-block;
+}
+
+body header nav ul li a {
+  color: #fff;
+}
+
+body header hr {
+  border-top: 1px solid #fff;
+}
+
+body .h1 {
+  font-family: "lato-bold";
+}
+
+body .h1.large {
+  font-size: 5rem;
+}
+
+body .h3 {
+  font-family: "lato-bold";
+  color: #ff1d25;
+  font-size: 2rem;
+}
+
+body .h4 {
+  font-size: 1.8rem;
+}
+
+body .main-text,
+body .btn-red {
+  color: #a0a0a0;
+  font-size: 1rem;
+}
+
+body .main-text.bold,
+body .bold.btn-red {
+  font-family: "lato-bold";
+}
+
+body .main-text.light,
+body .light.btn-red {
+  font-family: "lato-light";
+}
+
+body .main-text.medium,
+body .medium.btn-red {
+  font-size: 1.25rem;
+}
+
+body .secondary-text {
+  font-family: "lato-light";
+  color: #fff;
+  font-size: 1.75rem;
+}
+
+body .secondary-text.padding-bot {
+  padding: 0 0 6rem 0;
+}
+
+body .btn-red {
+  background-color: #e3342f;
+  color: #fff;
+}
+
+body footer {
+  background: #000;
+}
+
+body footer ul li {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+}
+
+body footer ul li i {
+  font-size: 2rem;
+}
+
+@font-face {
+  font-family: "Lato-regular";
+  src: url("/fonts/lato/lato-regular.eot");
+  src: url("/fonts/lato/lato-regular.eot?#iefix") format("embedded-opentype"), url("/fonts/lato/lato-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Lato-bold";
+  src: url("/fonts/lato/lato-bold.eot");
+  src: url("/fonts/lato/lato-bold.eot?#iefix") format("embedded-opentype"), url("/fonts/lato/lato-bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Lato-Light";
+  src: url("/fonts/lato/lato-Light.eot");
+  src: url("/fonts/lato/lato-Light.eot?#iefix") format("embedded-opentype"), url("/fonts/lato/lato-Light.woff") format("woff");
+}
+
+body .p--spacing {
+  letter-spacing: 0.2em;
+}
+
+body .btn-rounded {
+  border-radius: 50px;
+  margin-right: 1em;
+}
+
+body .container-pizza {
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  body .container-pizza {
+    height: 300px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body .container-pizza {
+    height: 150px;
+  }
+}
+
+body .pizza_home {
+  z-index: 1;
+  position: absolute;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  body .pizza_home {
+    width: 100%;
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body .pizza_home {
+    width: 100%;
+    position: relative;
+  }
+}
+
+body .pizza_plate {
+  z-index: 0;
+  position: absolute;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  body .pizza_plate {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body .pizza_plate {
+    display: none;
+  }
+}
+
+body .main_images {
+  padding-left: 1rem;
+  margin-left: 3rem;
+}
+
+@media only screen and (max-width: 767px) {
+  body .main_images {
+    padding-left: 0rem;
+    margin-left: 0rem;
+  }
+}
+
+body .main_image {
+  width: 100%;
+}
+
+body .secondary_image {
+  width: 75%;
+}
+
+body .third_image {
+  width: 50%;
+  margin-top: 1em;
+  margin-right: 1em;
+}
+
+@media only screen and (max-width: 767px) {
+  body .gallery {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1em;
+  }
+}
+
+body .user-icon {
+  position: absolute;
+  top: -4rem;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 4rem;
+  border: solid #a0a0a0 1px;
+  width: 7rem;
+  height: 7rem;
+  background-color: #fff;
+  color: #a0a0a0;
+}
+
+body #formRegister {
+  display: none;
+}
+

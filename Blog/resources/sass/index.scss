@@ -1,0 +1,66 @@
+body{
+    .p--spacing{
+        letter-spacing: 0.2em;
+    }
+    .btn-rounded{
+        border-radius: 50px;
+        margin-right: 1em;
+    }
+    .container-pizza {
+        overflow: hidden;
+        @include respond-to(medium-screens) {
+            height: 300px;
+        }
+        @include respond-to(handhelds) {
+            height: 150px;
+        }
+    }
+    .pizza_home {
+        z-index: 1;
+        position: absolute;
+        @include respond-to(medium-screens) {
+            width: 100%;
+            position: relative;
+        }
+        @include respond-to(handhelds) {
+            width: 100%;
+            position: relative;
+        }
+    }
+    .pizza_plate {
+        z-index: 0;
+        position: absolute;
+        @include respond-to(medium-screens) {
+            display: none;
+        }
+        @include respond-to(handhelds) {
+            display: none;
+        }
+    }
+    .main_images {
+        padding-left: 1rem;
+        margin-left: 3rem;
+        @include respond-to(handhelds) {
+            padding-left: 0rem;
+            margin-left: 0rem;
+        }
+    }
+    .main_image {
+        width: 100%;
+    }
+    .secondary_image {
+        width: 75%;
+    }
+    .third_image {
+        width: 50%;
+        margin-top: 1em;
+        margin-right: 1em;
+    }
+    .gallery {
+        @include respond-to(handhelds) {
+            width: 100%;
+            justify-content: center;
+            margin-top: 1em;
+        }
+    }
+}
