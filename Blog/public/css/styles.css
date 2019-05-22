@@ -86,6 +86,11 @@ body .medium.btn-red {
   font-size: 1.25rem;
 }
 
+body .main-text.large,
+body .large.btn-red {
+  font-size: 1.75rem;
+}
+
 body .secondary-text {
   font-family: "lato-light";
   color: #fff;
