@@ -151,13 +151,13 @@ body .container-pizza {
   overflow: hidden;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media (max-width: 768px) {
   body .container-pizza {
     height: 300px;
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media (max-width: 576px) {
   body .container-pizza {
     height: 150px;
   }
@@ -168,14 +168,14 @@ body .pizza_home {
   position: absolute;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media (max-width: 768px) {
   body .pizza_home {
     width: 100%;
     position: relative;
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media (max-width: 576px) {
   body .pizza_home {
     width: 100%;
     position: relative;
@@ -187,13 +187,13 @@ body .pizza_plate {
   position: absolute;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media (max-width: 768px) {
   body .pizza_plate {
     display: none;
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media (max-width: 576px) {
   body .pizza_plate {
     display: none;
   }
@@ -204,7 +204,7 @@ body .main_images {
   margin-left: 3rem;
 }
 
-@media only screen and (max-width: 767px) {
+@media (max-width: 576px) {
   body .main_images {
     padding-left: 0rem;
     margin-left: 0rem;
@@ -225,7 +225,7 @@ body .third_image {
   margin-right: 1em;
 }
 
-@media only screen and (max-width: 767px) {
+@media (max-width: 576px) {
   body .gallery {
     width: 100%;
     justify-content: center;
@@ -252,6 +252,11 @@ body #formRegister {
   display: none;
 }
 
+body .btn.selected {
+  -webkit-filter: contrast(50%);
+          filter: contrast(50%);
+}
+
 body .btn.width {
   width: 60px;
   height: 60px;
@@ -274,6 +279,22 @@ body .container-pizza {
   height: 36rem;
 }
 
+@media (max-width: 768px) {
+  body .container-pizza {
+    height: 27rem;
+  }
+}
+
+@media (max-width: 576px) {
+  body .container-pizza {
+    height: 23rem;
+  }
+}
+
+body .disp-none {
+  display: none;
+}
+
 body .step-indicator {
   line-height: 1rem;
   color: #cccccc;
@@ -285,5 +306,17 @@ body .step-indicator span {
   line-height: 2.12rem;
   color: #808080;
   font-family: "lato-bold";
+}
+
+body .logo-size {
+  width: 150px;
+  -webkit-filter: contrast(50%);
+          filter: contrast(50%);
+}
+
+body .logo-size.selected {
+  -webkit-filter: none;
+          filter: none;
+  width: 200px;
 }
 
