@@ -11,7 +11,7 @@ body{
         @include respond-to(medium-screens) {
             height: 300px;
         }
-        @include respond-to(handhelds) {
+        @include respond-to(small-screens) {
             height: 150px;
         }
     }
@@ -22,7 +22,7 @@ body{
             width: 100%;
             position: relative;
         }
-        @include respond-to(handhelds) {
+        @include respond-to(small-screens) {
             width: 100%;
             position: relative;
         }
@@ -33,14 +33,14 @@ body{
         @include respond-to(medium-screens) {
             display: none;
         }
-        @include respond-to(handhelds) {
+        @include respond-to(small-screens) {
             display: none;
         }
     }
     .main_images {
         padding-left: 1rem;
         margin-left: 3rem;
-        @include respond-to(handhelds) {
+        @include respond-to(small-screens) {
             padding-left: 0rem;
             margin-left: 0rem;
         }
@@ -57,7 +57,7 @@ body{
         margin-right: 1em;
     }
     .gallery {
-        @include respond-to(handhelds) {
+        @include respond-to(small-screens) {
             width: 100%;
             justify-content: center;
             margin-top: 1em;

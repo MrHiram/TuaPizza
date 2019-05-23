@@ -1,0 +1,54 @@
+body{
+    .btn{
+        &.selected{
+            filter: contrast(50%);
+        }
+        &.width{
+            width: 60px;
+            height: 60px;
+        }
+    }
+    ul{
+        .height{
+            line-height: 0.5rem;
+            .fa-circle{
+                font-size: 0.5rem;
+                color: $greyLight;
+                &.active{
+                    color: $darkGrey;
+                }
+            }
+        }
+    }
+    .container-pizza{
+        height: 36rem;
+        @include respond-to(medium-screens) {
+            height: 27rem;
+        }
+        @include respond-to(small-screens) {
+            height: 23rem;
+        }
+    }
+    .disp-none{
+        display: none;
+    }
+    .step-indicator{
+        line-height: 1rem;
+        color: $greyLight;
+        font-size: 1rem;
+        span{
+            font-size: 1.75rem;
+            line-height: 2.12rem;
+            color: $darkGrey;
+            font-family: 'lato-bold';
+        }
+    }
+    .logo-size{
+        width: 150px;
+        filter: contrast(50%);
+        &.selected{
+            filter: none;
+            width: 200px;
+        }
+    }
+}

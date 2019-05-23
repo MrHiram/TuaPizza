@@ -42,45 +42,64 @@
     <section>
         <h3 class="h3 text-center py-3">Especialidades</h3>
         <p class="main-text medium text-center">Proba nuestras especialidades de la casa</p>
-        <div class="d-flex offset-1 col-10 justify-content-between">
-            <div class="card col p-0 my-5">
-                <img class="card-img-top" src="{{url('/img/pizza-1.jpeg')}}" alt="" style="height:282px">
-                <div class="card-body">
-                    <h4 class="h4 card-title">Franbuesa Fusión</h4>
-                    <p class="card-text main-text medium text-dark">Nuestra deliciosa pizza dulce, es donde el almuerzo se vuelve postre.</p>
-                    <button class="btn btn-red col-12 mt-3">Probar</button>
+        <div class=" col-12 col-lg-8 offset-lg-2">
+            <div class="card-deck">
+                <div class="card col p-0 my-5">
+                    <img class="card-img-top" src="{{url('/img/pizza-1.jpeg')}}" alt="" style="">
+                    <div class="card-body">
+                        <h4 class="h4 card-title">Franbuesa Fusión</h4>
+                        <p class="card-text main-text medium text-dark">Nuestra deliciosa pizza dulce, es donde el almuerzo se vuelve postre.</p>
+                        <button class="btn btn-red col-12 mt-3">Probar</button>
+                    </div>
                 </div>
-            </div>
-            <div class="card col p-0 my-5 mx-5">
-                <img class="card-img-top" src="{{url('/img/pizza-3.jpg')}}" alt="">
-                <div class="card-body">
-                    <h4 class="h4 card-title">Mariscaza</h4>
-                    <p class="card-text main-text medium text-dark">TuaPizza ha descubierto el secreto al unir los mariscos y la pizza. Es una exposión de sabor en tu boca.</p>
-                    <button class="btn btn-red col-12 mt-3">Probar</button>
+                <div class="card col p-0 my-5">
+                    <img class="card-img-top" src="{{url('/img/pizza-3.jpg')}}" alt="">
+                    <div class="card-body">
+                        <h4 class="h4 card-title">Mariscaza</h4>
+                        <p class="card-text main-text medium text-dark">TuaPizza ha descubierto el secreto al unir los mariscos y la pizza. Es una exposión de sabor en tu boca.</p>
+                        <button class="btn btn-red col-12 mt-3">Probar</button>
+                    </div>
                 </div>
-            </div>
-            <div class="card col p-0 my-5">
-                <img class="card-img-top" src="{{url('/img/pizza-2.jpg')}}" alt="">
-                <div class="card-body">
-                    <h4 class="h4 card-title">Hamburpizza</h4>
-                    <p class="card-text main-text medium text-dark">¿Hamburguesas o pizzas? TuaPizza ha combinado las comidas rápidas favoritas de nuestros clientes para un sabor único.</p>
-                    <button class="btn btn-red col-12 mt-3">Probar</button>
+                <div class="card col p-0 my-5">
+                    <img class="card-img-top" src="{{url('/img/pizza-2.jpg')}}" alt="">
+                    <div class="card-body">
+                        <h4 class="h4 card-title">Hamburpizza</h4>
+                        <p class="card-text main-text medium text-dark">¿Hamburguesas o pizzas? TuaPizza ha combinado las comidas rápidas favoritas de nuestros clientes para un sabor único.</p>
+                        <button class="btn btn-red col-12 mt-3">Probar</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="bg--grey__light">
-            <div class="col">
-                <img src="" alt="">
+        <div class="container col-12 bg-light py-5">
+            <div class="row py-5 mx-3">
+                <div class="col-12 col-lg-6 text-right">
+                    <img src="img/menu-girl.jpg" alt="" class="img-fluid w-100">
+                </div>
+                <div class="col-12 col-lg-6">
+                <img src="img/" alt="">
+                    <h4 class="h4">¿No te gustó ninguna?</h4>
+                    <p class="main-text medium text-dark"> No hay problema en Tua Pizza te ofrecemos la posibilidad de crear tu propia pizza desde cero, con todos los toppings que mas te guste.</p>
+                    <button class="btn btn-red col-12 col-lg-4 mt-3">Comenzar</button>
+                </div>
             </div>
-            <div class="col">
-                <h4 class="h4">¿No te gustó ninguna?</h4>
-                <p class="main-text medium text-dark"> No hay bronca</p>
-                <button class="btn btn-red col-2 mt-3">Comenzar</button>
-                <!-- Continuar aquí -->
-            </div>
+        </div>
         </div>
     </section>
     <footer>
+    <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8 col-sm-12 text-center">
+                    <a href=""><img src="img/logo.png" class="my-3" alt=""></a>
+                    <ul class="p-0">
+                        <li class="bg-light rounded-circle mx-4 mt-3"><i class="fab fa-twitter mt-2" alt=""></i></li>
+                        <li class="bg-light rounded-circle mx-4 mt-3"><i class="fab fa-instagram mt-2" alt=""></i></li>
+                        <li class="bg-light rounded-circle mx-4 mt-3"><i class="fab fa-facebook-f mt-2" alt=""></i></li>
+                        <li class="bg-light rounded-circle mx-4 mt-3"><i class="fab fa-google mt-2" alt=""></i></li>
+                    </ul>
+                    <p class="my-3 main-text">Todos los derechos reservados</p>
+                </div>
+            </div>
+        </div>
         
     </footer>
 </body>

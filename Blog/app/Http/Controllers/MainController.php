@@ -21,7 +21,7 @@ class MainController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createU()
     {
         //
     }
@@ -93,5 +93,8 @@ class MainController extends Controller
     }
     public function about(){
         return view('about');
+    }
+    public function create(){
+        return view('create');
     }
 }
