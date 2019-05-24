@@ -1,0 +1,26 @@
+body{
+    .fixed-pos{
+        position: fixed;
+        z-index: 2;
+    }
+    .profile-sidebar{
+        position: sticky;
+        top: 4.3rem;
+        height: calc(100vh - 3rem);
+    }
+    .margin-right{
+        margin-right: -30px;
+    }
+    .card-width{
+        width: 23rem;
+        @include respond-to(large-screens) {
+            width: 18rem;
+        }
+    }
+    .card-columns {
+        column-count: 1;
+        @include respond-to(large-screens) {
+          column-count: 4;
+        }
+    }
+}

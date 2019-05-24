@@ -23,31 +23,43 @@
 
 </head>
 <body>
-    <header class="bg--img__wall">
+    <header class="bg--img__wall overflow-hidden">
         <nav class="navbar navbar-expand-lg mb-5 navbar-dark">
-            <a href="" class="navbar-brand ml-5"><img src="img/logo.png" class="logo" alt="">Tua Pizza</a>
+            <a href="/" class="navbar-brand ml-5"><img src="img/logo.png" class="logo" alt="">Tua Pizza</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="" class="nav-link mx-3">Inicio</a></li>
-                    <li class="nav-item"><a href="" class="nav-link mx-3">Crear</a></li>
-                    <li class="nav-item"><a href="" class="nav-link mx-3">Sobre Nosotros</a></li>
-                    <li class="nav-item"><a href="" class="nav-link mx-3">Iniciar Sesión</a></li>
+                    <li class="nav-item active"><a href="/" class="nav-link mx-3">Inicio</a></li>
+                    <li class="nav-item"><a href="/create" class="nav-link mx-3">Crear</a></li>
+                    <li class="nav-item"><a href="/menu" class="nav-link mx-3">Menu</a></li>
+                    <li class="nav-item"><a href="/about" class="nav-link mx-3">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a href="/signin" class="nav-link mx-3">Iniciar Sesión</a></li>
+                    <li>
+                        <div class="btn-group">
+                            <button class="btn nav-link dropdown-toggle mr-3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                HiramGonzalez
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-left px-3">
+                                <a href="/profile" class="text-dark"><i class="fas fa-user"></i>&#160; Perfil</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="" class="text-dark"><i class="fas fa-sign-out-alt"></i>&#160; Log-out</a>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </nav>
         <div class="container-fluid">
             <div class="row main-padding text-center text-lg-left">
-                <div class="col-lg-5 offset-lg-1 col-sm-12 my-5 py-5">
+                <div class="col-lg-5 offset-lg-1 col-sm-12 py-5">
                     <p class="p--spacing pt-5">Dele viaje y empezá a</p>
                     <h1 class="h1 large">Crear tu Pizza</h1>
-                    <a href="" class="btn btn-danger btn-rounded mt-3 px-5 mb-5">Comenzar</a>
-                    <a href="" class="btn btn-outline-light btn-rounded mt-3 px-5 mb-5">Iniciar Sesion</a>
-                    <span class="d-block p-4"></span>
+                    <a href="/create" class="btn btn-danger btn-rounded mt-3 px-5 mb-5">Comenzar</a>
+                    <a href="/signin" class="btn btn-outline-light btn-rounded mt-3 px-5 mb-5">Iniciar Sesion</a>
                 </div>
-                <div class="col-lg-6 col-12 d-flex justify-content-around justify-content-lg-start">
+                <div class="col-lg-6 col-12 d-flex justify-content-start justify-content-md-center justify-content-lg-around p-0">
                     <div class="container-pizza">
                         <img src="img/plato_pizza.png" class="img-fluid wow fadeInUp pizza_plate" alt="">
                         <img src="img/pizza_index.png" class="img-fluid wow fadeInUp delay-1s pizza_home" alt="">
@@ -65,12 +77,12 @@
             </div>
         </div>
         <div class="row main_images">
-            <div class="col-lg-6 col-md-6 col-sd-12 text-right">
-                <a href=""><img src="img/menu2.jpg" class="wow fadeIn image-fluid gallery main_image" alt=""></a>
+            <div class="col-lg-6 col-md-6 col-sd-12 text-right p-0 pr-3">
+                <a href=""><img src="img/menu2.jpg" class="wow fadeIn image-fluid gallery main_image w-100" alt=""></a>
             </div>
             <div class="col-lg-6 col-md-6 col-sd-12">
-                <img src="img/masa.jpg" class="wow delay fadeIn delay-1s  image-fluid gallery secondary_image" alt="">
-                <img src="img/personas.jpg" class="wow fadeIn delay-2s image-fluid gallery third_image" alt="">
+                <img src="img/masa.jpg" class="wow delay fadeIn delay-1s image-fluid gallery secondary_image w-75" alt="">
+                <img src="img/personas.jpg" class="wow fadeIn delay-2s image-fluid gallery third_image w-50" alt="">
             </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
 body{
     .btn{
         &.selected{
-            filter: contrast(50%);
+            filter: opacity(50%);
         }
         &.width{
             width: 60px;
@@ -21,12 +21,12 @@ body{
         }
     }
     .container-pizza{
-        height: 36rem;
-        @include respond-to(medium-screens) {
-            height: 27rem;
-        }
+        height: 25rem !important;
         @include respond-to(small-screens) {
-            height: 23rem;
+            height: 33rem !important;
+        }
+        @include respond-to(medium-screens) {
+            height: 37rem !important;
         }
     }
     .disp-none{
@@ -45,7 +45,7 @@ body{
     }
     .logo-size{
         width: 150px;
-        filter: contrast(50%);
+        filter: opacity(25%);
         &.selected{
             filter: none;
             width: 200px;

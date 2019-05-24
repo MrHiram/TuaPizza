@@ -24,18 +24,31 @@
 
 </head>
 <body class="bg-light">
-    <header>
-        <nav class="navbar navbar-expand-lg mb-5 navbar-dark bg-dark">
-            <a href="" class="navbar-brand ml-5"><img src="img/logo.png" class="logo" alt="">Tua Pizza</a>
+    <header class="bg--img__wall">
+        <nav class="navbar navbar-expand-lg mb-5 navbar-dark">
+            <a href="/" class="navbar-brand ml-5"><img src="img/logo.png" class="logo" alt="">Tua Pizza</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="/" class="nav-link mx-3">Inicio</a></li>
-                    <li class="nav-item"><a href="/create" class="nav-link mx-3">Crear</a></li>
-                    <li class="nav-item active"><a href="" class="nav-link mx-3">Sobre Nosotros</a></li>
-                    <li class="nav-item"><a href="" class="nav-link mx-3">Iniciar Sesión</a></li>
+                    <li class="nav-item active"><a href="/create" class="nav-link mx-3">Crear</a></li>
+                    <li class="nav-item"><a href="/menu" class="nav-link mx-3">Menu</a></li>
+                    <li class="nav-item"><a href="/about" class="nav-link mx-3">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a href="/signin" class="nav-link mx-3">Iniciar Sesión</a></li>
+                    <li>
+                        <div class="btn-group">
+                            <button class="btn nav-link dropdown-toggle mr-3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                HiramGonzalez
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-left px-3">
+                                <a href="/profile" class="text-dark"><i class="fas fa-user"></i>&#160; Perfil</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="" class="text-dark"><i class="fas fa-sign-out-alt"></i>&#160; Log-out</a>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -66,7 +79,7 @@
                         <img src="img/basil.png" class="img-fluid position-absolute w-100 disp-none" alt="" style="z-index: 16" id="basil">
                         <img src="img/cilantro.png" class="img-fluid position-absolute w-100 disp-none" alt="" style="z-index: 17" id="cilantro">
                     </div>
-                    <label for="" class="main-text bold large text-dark te">Monto a Cancelar</label>
+                    <label for="" class="main-text bold large text-dark">Monto a Cancelar</label>
                     <div class="card col-6 offset-3 text-left">
                         <p id="pizzaValue" class="main-text text-dark my-2">$ 10</p>
                     </div>
@@ -102,6 +115,7 @@
                         <li class="p-0 mx-4 my-2"><button onClick="addIngredient(this)" value="3" id="carnemolida" class="btn bg-white width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-carneMolida.png" alt=""></button></li>
                         <li class="p-0 mx-4 my-2"><button onClick="addIngredient(this)" value="3" id="bacon" class="btn bg-white width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-bacon.png" alt=""></button></li>
                         <li class="p-0 mx-4 my-2"><button onClick="addIngredient(this)" value="3" id="salchicha" class="btn bg-white width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-salchicha.png" alt=""></button></li>
+                        <li class="p-0 mx-4 my-2"><button onClick="addIngredient(this)" value="3" id="peperoni" class="btn bg-white width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-peperoni.png" alt=""></button></li>                    
                     </ul>
                     <label class="main-text medium text-dark mb-0">Elegí tus queso favorito</label>
                     <hr class="border-top my-2">

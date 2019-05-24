@@ -22,16 +22,29 @@
 <body>
     <header class="bg--img__wall">
         <nav class="navbar navbar-expand-lg mb-5 navbar-dark">
-            <a href="" class="navbar-brand ml-5"><img src="img/logo.png" class="logo" alt="">Tua Pizza</a>
+            <a href="/" class="navbar-brand ml-5"><img src="img/logo.png" class="logo" alt="">Tua Pizza</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="" class="nav-link mx-3">Inicio</a></li>
-                    <li class="nav-item"><a href="" class="nav-link mx-3">Crear</a></li>
-                    <li class="nav-item"><a href="" class="nav-link mx-3">Sobre Nosotros</a></li>
-                    <li class="nav-item"><a href="" class="nav-link mx-3">Iniciar Sesión</a></li>
+                    <li class="nav-item active"><a href="/" class="nav-link mx-3">Inicio</a></li>
+                    <li class="nav-item"><a href="/create" class="nav-link mx-3">Crear</a></li>
+                    <li class="nav-item"><a href="/menu" class="nav-link mx-3">Menu</a></li>
+                    <li class="nav-item"><a href="/about" class="nav-link mx-3">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a href="/signin" class="nav-link mx-3">Iniciar Sesión</a></li>
+                    <li>
+                        <div class="btn-group">
+                            <button class="btn nav-link dropdown-toggle mr-3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                HiramGonzalez
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-left px-3">
+                                <a href="/profile" class="text-dark"><i class="fas fa-user"></i>&#160; Perfil</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="" class="text-dark"><i class="fas fa-sign-out-alt"></i>&#160; Log-out</a>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </nav>

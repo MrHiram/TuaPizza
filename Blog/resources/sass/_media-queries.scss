@@ -4,22 +4,22 @@ $break-large: 992px;
 $break-extraLarge: 1200px;
 @mixin respond-to($media) {
     @if $media==small-screens {
-        @media (max-width: $break-small) {
+        @media (min-width: $break-small) {
             @content;
         }
     }
     @else if $media==medium-screens {
-        @media (max-width: $break-medium) {
+        @media (min-width: $break-medium) {
             @content;
         }
     }
     @else if $media==large-screens {
-        @media (max-width: $break-large) {
+        @media (min-width: $break-large) {
             @content;
         }
     }
     @else if $media==extra-large-screens {
-        @media (max-width: $break-extraLarge) {
+        @media (min-width: $break-extraLarge) {
             @content;
         }
     }
