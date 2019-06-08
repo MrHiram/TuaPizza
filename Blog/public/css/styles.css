@@ -4,12 +4,26 @@ body {
 }
 
 body.bg--img__wall {
-  background-image: url("/img/fondo.png");
+  background-image: url("/img/fondo.webp");
   background-size: cover;
 }
 
 body .bg--grey__light {
   background-color: #cccccc;
+}
+
+@media not all and (min-resolution: 0.001dpcm) {
+  body body.bg--img__wall,
+  body body header.bg--img__wall {
+    background-color: #000;
+    background-image: url("/img/fondo.png");
+    background-size: cover;
+  }
+
+  body body header.bg--img__table {
+    background-image: url("/img/mesa.png");
+    background-size: cover;
+  }
 }
 
 body header {
@@ -18,12 +32,13 @@ body header {
 }
 
 body header.bg--img__table {
-  background-image: url("/img/mesa.png");
+  background-image: url("/img/mesa.webp");
   background-size: cover;
 }
 
 body header.bg--img__wall {
-  background-image: url("/img/fondo.png");
+  background-color: #000;
+  background-image: url("/img/fondo.webp");
   background-size: cover;
 }
 
@@ -337,7 +352,7 @@ body ul .height .fa-circle.active {
 }
 
 body .container-pizza {
-  height: 25rem !important;
+  height: 15rem !important;
 }
 
 @media (min-width: 576px) {
@@ -370,7 +385,6 @@ body .step-indicator span {
 }
 
 body .logo-size {
-  width: 150px;
   -webkit-filter: opacity(25%);
           filter: opacity(25%);
 }
@@ -378,6 +392,16 @@ body .logo-size {
 body .logo-size.selected {
   -webkit-filter: none;
           filter: none;
-  width: 200px;
+}
+
+body button.selectedBtn {
+  width: 90px;
+  opacity: 1 !important;
+}
+
+@media (min-width: 576px) {
+  body button.selectedBtn {
+    width: 275px;
+  }
 }
 

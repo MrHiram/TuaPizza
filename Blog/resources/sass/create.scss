@@ -21,7 +21,7 @@ body{
         }
     }
     .container-pizza{
-        height: 25rem !important;
+        height: 15rem !important;
         @include respond-to(small-screens) {
             height: 33rem !important;
         }
@@ -44,11 +44,18 @@ body{
         }
     }
     .logo-size{
-        width: 150px;
         filter: opacity(25%);
         &.selected{
             filter: none;
-            width: 200px;
+        }
+    }
+    button{
+        &.selectedBtn{
+            width: 90px;
+            @include respond-to(small-screens) {
+                width: 275px;
+            }
+            opacity: 1 !important;
         }
     }
 }

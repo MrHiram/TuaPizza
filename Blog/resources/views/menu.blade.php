@@ -5,9 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <title>Menu Tua Pizza</title>
 
     <!-- Styles -->
     <link rel="stylesheet" href="/css/styles.css">
@@ -35,7 +33,7 @@
                     <li class="nav-item"><a href="/signin" class="nav-link mx-3">Iniciar Sesión</a></li>
                     <li>
                         <div class="btn-group">
-                            <button class="btn nav-link dropdown-toggle mr-3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn nav-link dropdown-toggle mr-3 pl-3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 HiramGonzalez
                             </button>
                             <div class="dropdown-menu dropdown-menu-left px-3">
@@ -57,24 +55,24 @@
         <p class="main-text medium text-center">Proba nuestras especialidades de la casa</p>
         <div class=" col-12 col-lg-8 offset-lg-2">
             <div class="card-deck">
-                <div class="card col p-0 my-5">
-                    <img class="card-img-top" src="{{url('/img/pizza-1.jpeg')}}" alt="" style="">
+                <div class="card p-0 my-5">
+                    <img src='/img/pizza-1.jpeg' alt="" class="card-img-top">
                     <div class="card-body">
-                        <h4 class="h4 card-title">Franbuesa Fusión</h4>
+                        <h4 class="h4 card-title">Frambuesa Fusión</h4>
                         <p class="card-text main-text medium text-dark">Nuestra deliciosa pizza dulce, es donde el almuerzo se vuelve postre.</p>
                         <button class="btn btn-red col-12 mt-3">Probar</button>
                     </div>
                 </div>
-                <div class="card col p-0 my-5">
-                    <img class="card-img-top" src="{{url('/img/pizza-3.jpg')}}" alt="">
+                <div class="card p-0 my-5">
+                    <img class="card-img-top" src='/img/pizza-3.jpg' alt="">
                     <div class="card-body">
                         <h4 class="h4 card-title">Mariscaza</h4>
                         <p class="card-text main-text medium text-dark">TuaPizza ha descubierto el secreto al unir los mariscos y la pizza. Es una exposión de sabor en tu boca.</p>
                         <button class="btn btn-red col-12 mt-3">Probar</button>
                     </div>
                 </div>
-                <div class="card col p-0 my-5">
-                    <img class="card-img-top" src="{{url('/img/pizza-2.jpg')}}" alt="">
+                <div class="card p-0 my-5">
+                    <img class="card-img-top" src='/img/pizza-2.jpg' alt="">
                     <div class="card-body">
                         <h4 class="h4 card-title">Hamburpizza</h4>
                         <p class="card-text main-text medium text-dark">¿Hamburguesas o pizzas? TuaPizza ha combinado las comidas rápidas favoritas de nuestros clientes para un sabor único.</p>
@@ -102,7 +100,7 @@
     <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8 col-sm-12 text-center">
-                    <a href=""><img src="img/logo.png" class="my-3" alt=""></a>
+                    <a href="/"><img src="img/logo.png" class="my-3" alt=""></a>
                     <ul class="p-0">
                         <li class="bg-light rounded-circle mx-4 mt-3"><i class="fab fa-twitter mt-2" alt=""></i></li>
                         <li class="bg-light rounded-circle mx-4 mt-3"><i class="fab fa-instagram mt-2" alt=""></i></li>

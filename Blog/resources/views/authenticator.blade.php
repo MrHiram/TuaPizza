@@ -35,7 +35,7 @@
                     <li class="nav-item active"><a href="/signin" class="nav-link mx-3">Iniciar Sesión</a></li>
                     <li>
                         <div class="btn-group">
-                            <button class="btn nav-link dropdown-toggle mr-3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn nav-link dropdown-toggle mr-3 pl-3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 HiramGonzalez
                             </button>
                             <div class="dropdown-menu dropdown-menu-left px-3">
