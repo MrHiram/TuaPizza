@@ -1,66 +1,13 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Laravel</title>
-    <link rel="shortcut icon" href="img/logoNegro.ico" type="image/x-icon" />
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+@extends('layout')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
-    <!-- Scripts -->
-    <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="/js/live.js"></script>
-
-</head>
-<body>
-    <header class="bg--img__wall fixed-pos">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <a href="/" class="navbar-brand ml-5"><img src="img/logo.png" class="logo" alt="">Tua Pizza</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    
-                    <li class="nav-item active"><a href="#" onClick="receipt()" class="nav-link mx-3 d-block d-lg-none"><i class="fas fa-file-invoice-dollar"></i>&#160; &#160; Facturas</a></li>
-                    <li class="nav-item active"><a href="#" onClick="history()" class="nav-link mx-3 d-block d-lg-none"><i class="fas fa-history"></i>&#160; &#160; Historial</a></li>
-                    <li class="nav-item active"><a href="#" conClick="favorites()" class="nav-link mx-3 d-block d-lg-none"><i class="fas fa-star"></i>&#160; Favoritas</a></li>
-                    <li class="d-block d-lg-none"><hr class="col-10"></li>
-                    <li class="nav-item"><a href="/create" class="nav-link mx-3">Crear</a></li>
-                    <li class="nav-item"><a href="/menu" class="nav-link mx-3">Menu</a></li>
-                    <li class="nav-item"><a href="/about" class="nav-link mx-3">Sobre Nosotros</a></li>
-                    <li class="nav-item"><a href="/signin" class="nav-link mx-3">Iniciar Sesión</a></li>
-                    <li class="nav-item active"><a href="/signin" class="nav-link mx-3 d-block d-lg-none">Perfil</a></li>
-                    <li class="nav-item"><a href="/signin" class="nav-link mx-3 d-block d-lg-none">Log-out</a></li>
-                    <li class="d-none d-lg-block">
-                        <div class="btn-group">
-                            <button class="btn nav-link dropdown-toggle mr-5" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Hiram González C.
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-left px-3">
-                                <a href="/profile" class="text-dark"><i class="fas fa-user"></i>&#160; Perfil</a>
-                                <div class="dropdown-divider"></div>
-                                <a href="" class="text-dark"><i class="fas fa-sign-out-alt"></i>&#160; Log-out</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+@section('title','Perfil')
+@section('header')
+</header> 
+@endsection  
+@section('content')
     <section>
     <div class="container-fluid row pr-0">
-        <div class="col-2 bg-dark profile-sidebar text-white d-none d-lg-block py-5 mt-5">
+        <div class="col-2 bg-dark profile-sidebar text-white d-none d-lg-block py-5">
             <div class="row mb-3 justify-content-center">
                 <div class="h4 text-white bg-danger rounded-circle text-center btn width"><i class="far fa-user"></i></div>
                 <p class="m-3">Hiram González C.</p>
@@ -385,9 +332,9 @@
         </div>
     </div>
     </section>
-    <footer>
-    </footer>
+    @endsection
 </body>
+@section('scripts')
     <script>
         function receipt() {
             $('#receipt').css('display','block');
@@ -398,13 +345,15 @@
         function history() {
             $('#receipt').css('display','none');
             $('#history').css('display','block');
-            $('#favorites').css('display','none');            
+            $('#favorites').css('display','none');
+            $('#indicator').text('Historial');            
         }
         
         function favorites() {
             $('#receipt').css('display','none');
             $('#history').css('display','none');
-            $('#favorites').css('display','block');            
+            $('#favorites').css('display','block'); 
+            $('#indicator').text('Favoritas');           
         }
     </script>
-</html>
+ @endsection
