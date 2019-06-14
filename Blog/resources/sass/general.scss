@@ -2,21 +2,33 @@ body {
     font-family: 'lato-regular';
     color: #919191;
     &.bg--img__wall {
-        background-image: url("/img/fondo.png");
+        background-image: url("/img/fondo.webp");
         background-size: cover;
     }
     .bg--grey__light {
         background-color: $greyLight;
     }
+    @include respond-to(safari-screens){
+        body.bg--img__wall, body header.bg--img__wall {     
+            background-color: #000;       
+            background-image: url("/img/fondo.png");
+            background-size: cover;
+        }
+        body header.bg--img__table {
+            background-image: url("/img/mesa.png");
+            background-size: cover;
+        }
+    }
     header {
         width: 100%;
         color: $white;
         &.bg--img__table {
-            background-image: url("/img/mesa.png");
+            background-image: url("/img/mesa.webp");
             background-size: cover;
         }
         &.bg--img__wall {
-            background-image: url("/img/fondo.png");
+            background-color: #000;
+            background-image: url("/img/fondo.webp");
             background-size: cover;
         }
         nav {

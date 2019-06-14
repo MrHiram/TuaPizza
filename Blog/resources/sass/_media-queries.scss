@@ -23,4 +23,9 @@ $break-extraLarge: 1200px;
             @content;
         }
     }
+    @else if $media==safari-screens{
+        @media not all and (min-resolution:.001dpcm) { 
+            @content;
+        }
+    }
 }
