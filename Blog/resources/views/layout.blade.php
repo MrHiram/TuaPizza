@@ -32,6 +32,7 @@
               </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
+                    @yield('navPerfil')
                     <li class="nav-item @yield('activeIndex')"><a href="/" class="nav-link mx-3">Inicio</a></li>
                     <li class="nav-item @yield('activeCrear')"><a href="/create" class="nav-link mx-3">Crear</a></li>
                     <li class="nav-item @yield('activeMenu')"><a href="/menu" class="nav-link mx-3">Menu</a></li>
