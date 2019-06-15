@@ -13,14 +13,9 @@
                 <form id="formLogin" method="post"action="{{ route('login') }}" class="form-group pt-5">
                     @csrf
         	        <label class="main-text pt-3" for="email">Correo electronico</label>
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="correo@email.com">
-                    @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror                    
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="correo@email.com"> 
 
-        	        <label class="main-text pt-3" for="password">Contraseña</label>
+        	        <label class="main-text pt-3" for="Password">Contraseña</label>
                     <input id="password" type="password" class="form-control @error('email') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="password">
                     @error('email')
                         <span class="invalid-feedback" role="alert">
@@ -28,8 +23,16 @@
                         </span>
                     @enderror
 
-                    <button class="btn btn-red bold col-12 mt-3">Ingresar</button>
-                    <p class="text-center main-text light mt-2">¿Aun no tienes cuenta? <a href="register" onClick="return false;" id="register">Registrate</a></p>
+                    <button class="btn btn-red bold col-12 mt-3">Ingresar</button>                 
+                    
+                    @if (Route::has('password.request'))
+                        <p class="text-center main-text light mt-2">¿Olvidaste tu contraseña?
+                                <a href="{{ route('password.request') }}">
+                                    {{ __(' Recuperar') }}
+                                </a>
+                        </p>    
+                    @endif
+                    <p class="text-center main-text light mt-2">¿Aun no tienes cuenta? <a href="register" onClick="return false;" id="register">Registrate</a></p>                    
                 </form>
                 <form id="formRegister" method="post" action="{{ route('register') }}" class="form-group pt-5">
                     @csrf
@@ -68,26 +71,26 @@
             </div>
         </div>
     </section>    
-    @endsection
-    @section('scripts')   
-    <script>
-            $('document').ready(function(){
-                $('#register').click(function(){
-                    loadRegister();
-                });
-                $('#login').click(function(){
-                    loadLogin();
-                });
+@endsection
+@section('scripts')   
+<script>
+        $('document').ready(function(){
+            $('#register').click(function(){
+                loadRegister();
             });
-            function loadRegister() {
-                $('#title').text('Crear Cuenta')
-                $('#formLogin').css('display', 'none');
-                $('#formRegister').css('display', 'block');
-            }
-            function loadLogin() {
-                $('#title').text('Inicio de Sesión')
-                $('#formLogin').css('display', 'block');
-                $('#formRegister').css('display', 'none');            
-            }
-        </script>
-    @endsection
+            $('#login').click(function(){
+                loadLogin();
+            });
+        });
+        function loadRegister() {
+            $('#title').text('Crear Cuenta')
+            $('#formLogin').css('display', 'none');
+            $('#formRegister').css('display', 'block');
+        }
+        function loadLogin() {
+            $('#title').text('Inicio de Sesión')
+            $('#formLogin').css('display', 'block');
+            $('#formRegister').css('display', 'none');            
+        }
+    </script>
+@endsection
