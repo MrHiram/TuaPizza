@@ -16,8 +16,9 @@ Route::get('/', function () {
     return view('index');
 });
 Route::get('/profile', 'MainController@userProfile');
-Route::get('/signin', 'MainController@authenticator');
 Route::get('/menu', 'MainController@menu');
 Route::get('/about', 'MainController@about');
 Route::get('/create', 'MainController@create');
+
+Auth::routes();
 ?>
