@@ -1,5 +1,6 @@
  @extends('layout')
  @section('title','Crear')
+ @section('footermargin','mt-5')
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <body class="bg-light">    
@@ -39,7 +40,7 @@
                         <p id="pizzaValue" class="main-text text-dark my-2">$ 10</p>
                     </div>
                 </div>
-                <div id="ingredientSelector" class="col-12 col-md-6 p-5">
+                <div id="ingredientSelector" class="col-12 col-md-6 p-5 ">
                     <label class="main-text medium text-dark mb-0">Elegí tus vegetales favoritos:<br class='d-sm-none'><span class='p-0 pl-sm-3'>$2 C/U</span></label>
                     <hr class="border-top my-2">
                     <ul class="d-flex flex-wrap list-unstyled">
@@ -120,16 +121,17 @@
                 <div id="deliveryForm" class="col-12 col-lg-6 offset-lg-3 mt-5 text-center disp-none">
                     <h3 class="h3">Ubicacion</h3>
                     <img class="image-fluid w-50 my-3" src="img/delivery.png" alt="">
-                    <form class="form-group text-left" action="">
-                        <label class="main-text bold medium text-dark" for="Distrito">Distrito:</label>
-                        <input class="form-control" type="text" name="Distrito">
-                        <label class="main-text bold medium text-dark" for="Calle">Calle:</label>
-                        <input class="form-control" type="text" name="Calle">
-                        <label class="main-text bold medium text-dark" for="Casa">Casa:</label>
-                        <input class="form-control" type="text" name="Casa">
-                        <label class="main-text bold medium text-dark" for="Telefono">Telefono:</label>
-                        <input class="form-control" type="text" name="Telefono">
-                    </form>
+                    <div class="form-group text-left">                        
+                        <div class="alert alert-danger disp-none" id="emptyError" role="alert">Todos los campos son requeridos.</div>
+                        <label class="main-text bold medium text-dark" for="district">Distrito:</label>
+                        <input class="form-control" type="text" id="district" name="district">
+                        <label class="main-text bold medium text-dark" for="street">Calle:</label>
+                        <input class="form-control" type="text" id="street" name="street">
+                        <label class="main-text bold medium text-dark" for="home">Casa:</label>
+                        <input class="form-control" type="text" id="home" name="home">
+                        <label class="main-text bold medium text-dark" for="phone">Telefono:</label>
+                        <input class="form-control" type="text" id="phone" name="phone">
+                    </div>
                 </div>
                 <div id="paymentForm" class="flex-wrap col-12 disp-none">
                     <div class="col-12 col-md-6 px-3 py-5">
@@ -183,7 +185,7 @@
                     </div>
                     <div class="col-12 col-md-6 px-3 py-5">
                         <h3 class="main-text bold large text-primary">Información de pago</h3>
-                        <form action="" class="form-group">
+                        <div class="form-group">
                             <label for="noCard" class="main-text bold text-dark">Número de tarjeta:</label>
                             <input class="form-control col-12 col-lg-8" type="text" name="noCard">
                             <label for="noCard" class="main-text bold text-dark">Tipo:</label>
@@ -229,11 +231,18 @@
                             </div>
                             <label for="secNo" class="main-text bold text-dark">Código de seguridad:</label>
                             <input class="form-control col-6 col-lg-3" type="password" name="secNo">
-                            <button class="btn btn-primary col-12 col-lg-8 mt-5">Pagar</button>
-                        </form>
+                            <button class="btn btn-primary col-12 col-lg-8 mt-5" onclick="sendInfo()">Pagar</button>
+                        </div>
                     </div>
                 </div>
-                <div class="col-12 d-flex justify-content-between"> 
+                <div id="delivery" class="col-12 mt-5 disp-none">
+                    <h3 class="h3 text-center py-5">Tu pedido va en camino</h3>
+                    <img src="img/delivery.png" alt="" class="col-4 offset-4">
+                    <div class="row justify-content-center">
+                        <a class="btn btn-primary my-4" href="/">Aceptar</a>
+                    </div>
+                </div>
+                <div id="button-nav"class="col-12 d-flex justify-content-between"> 
                     <div class="d-flex">
                         <ul class="px-3 pt-0 list-unstyled">
                             <li class="height"><i class="fas fa-circle active"></i></li>
@@ -245,138 +254,12 @@
                     </div>
                     <div>
                         <button id="btn-back" class="btn disp-none" onClick="lastStep()"><i class="fas fa-chevron-left main-text large"></i></button>
-                        <button class="btn" onClick="nextStep()"><i class="fas fa-chevron-right main-text large"></i></button>
+                        <button id="btn-forward" class="btn" onClick="nextStep()"><i class="fas fa-chevron-right main-text large"></i></button>
                     </div>
                 </div>
             </div>
         </div>
     </section>  
-    <script>
-        var pizzaCost = 10;
-        var step = 1;
-        var drinkSelected = 0;
-        var sizeCost = 4;
-        var number = 1;
-        var drinksCost = 4;
-        var totalCost = 14;
-        $('document').ready(function(){
-            $(function () {
-                $('[data-toggle="tooltip"]').tooltip()
-            })
-        });
-        function nextStep() {
-            if(step!=4){
-                step++;
-            }
-            switch (step) {
-                case 2:
-                    $('#pizzaPreview').css('display', 'none');
-                    $('#ingredientSelector').css('display', 'none');
-                    $('#btn-back').css('display', 'inline-block');
-                    $('#drinkSelector').css('display', 'flex');
-                    $('.step-indicator').children('span').text('Envio');
-                    break;
-                case 3:
-                    $('#drinkSelector').css('display', 'none');
-                    $('#deliveryForm').css('display', 'block');
-                    $('.step-indicator').children('span').text('Pagar');
-                    break;
-                case 4:
-                    $('#deliveryForm').css('display', 'none');
-                    $('#paymentForm').css('display', 'flex');
-                    $('.step-indicator').children('span').text('Comer');    
-                    break;
-            }
-        }
-        function lastStep() {
-            if(step!=1){
-                step--;
-            }
-            switch (step) {
-                case 1:
-                    $('#pizzaPreview').css('display', 'block');
-                    $('#ingredientSelector').css('display', 'block');
-                    $('#btn-back').css('display', 'none');
-                    $('#btn-back').css('display', 'none');
-                    $('#drinkSelector').css('display', 'none');
-                    $('.step-indicator').children('span').text('Bebidas');
-                    break;
-                case 2:
-                    $('#deliveryForm').css('display', 'none');
-                    $('#drinkSelector').css('display', 'flex');
-                    $('.step-indicator').children('span').text('Envio');
-                    break;
-                case 3:
-                    $('#paymentForm').css('display', 'none');
-                    $('#deliveryForm').css('display', 'block');
-                    $('.step-indicator').children('span').text('Pagar');
-                    break;
-                case 4:
-                    $('#deliveryForm').css('display', 'none');
-                    $('#finalStep').css('display', 'block');
-                    $('.step-indicator').children('span').text('Gracias');
-                break;
-            }
-        }
-        function addIngredient(element){
-            if($('img#'+element.id).css('display') != 'flex'){
-                $('img#'+element.id).css('display', 'flex');
-                $('button#'+element.id).addClass('selected');
-                var value = parseInt(element.value);
-                calcPizzaValue(value);
-            }else{
-                $('img#'+element.id).css('display', 'none');
-                $('button#'+element.id).removeClass('selected');
-                var value = parseInt(element.value);
-                calcPizzaValue(-value);
-            }
-        }
-        function calcPizzaValue(ammount) {
-            totalCost -= pizzaCost;
-            pizzaCost+=ammount;
-            totalCost += pizzaCost;
-            $('#pizzaValue').text('$ '+pizzaCost);
-        }
-        function changeDrink(element) {
-            $('.order-2').removeClass('order-2');
-            $('.order-1').removeClass('order-1');
-            $('#drink-'+drinkSelected).addClass('order-2');
-            $('#drink-'+element.value).addClass('order-1');
-            $('.selected').removeClass('selected');
-            $('.selectedBtn').removeClass('selectedBtn')
-                            .attr("disabled", false);;
-            $('#drink-'+element.value).children().addClass('selectedBtn')
-                            .attr("disabled", true);
-            $('#drink-'+element.value).children().children().addClass('selected');
-            drinkSelected = element.value;
-        }
-        function changeDrinkImg(element) {
-            $('#inputGroupSelect01').val(element.value).change();
-        }
-        function drinkCost(element){
-            switch (element.value) {
-                case '1':
-                    sizeCost = 4;
-                    break;
-                case '2':
-                    sizeCost = 2;
-                    break;
-                case '3':
-                    sizeCost = 1;
-                    break;
-            }
-            calcDrinkCost();
-        }
-        function drinkNumber(element){
-            number=parseInt(element.value);
-            calcDrinkCost();
-        }
-        function calcDrinkCost(){
-            totalCost-=drinksCost;
-            drinksCost = number*sizeCost;
-            totalCost+=drinksCost;
-            $('#drinksValue').text('$ '+drinksCost);            
-        }
-    </script>
-         
+    <script src="js/createToggler.js"></script>
+    <script src="js/submitOrder.js"></script>
    @endsection

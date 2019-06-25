@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Ingredient;
 
-class MainController extends Controller
+class IngredientController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,7 +22,7 @@ class MainController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function createU()
+    public function create()
     {
         //
     }
@@ -34,7 +35,9 @@ class MainController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ingredient = new Ingredient;
+        $ingredient->name=$request->input('name');
+        $ingredient->save();
     }
 
     /**
@@ -80,24 +83,5 @@ class MainController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function userProfile(){
-        return view('profile');
-    }
-    public function authenticator(){
-        return view('authenticator');
-    }
-    public function menu(){
-        return view('menu');
-    }
-    public function about(){
-        return view('about');
-    }
-    public function create(){
-        return view('create');
-    }
-    public function admin(){
-        return view('admin');
     }
 }

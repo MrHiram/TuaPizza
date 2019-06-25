@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <!-- Scripts -->
-    <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
@@ -71,7 +71,7 @@
         @yield('content')
     <footer class="@yield('lowerfooter')">
         <div class="container-fluid ">
-            <div class="row justify-content-center mt-5">
+            <div class="row justify-content-center @yield('footermargin')">
                 <div class="col-lg-6 col-md-8 col-sm-12 text-center text-body">
                     <a href="/"><img src="@yield('recoverlogo')img/logo.png" class="my-3" alt=""></a>
                     <ul class="p-0">

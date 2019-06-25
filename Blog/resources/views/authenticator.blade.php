@@ -2,6 +2,7 @@
 @section('title', 'Iniciar sesion')
 <body class="bg--img__wall">
 @section('activeInicio','active')
+@section('footermargin','mt-5')
 @section('content')
     <section>
         <h1 class="text-center h1 text-white" id="title">{{ __('Iniciar sesión') }}</h1>

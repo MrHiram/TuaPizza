@@ -1,6 +1,7 @@
 @extends('layout')
 @section('title', 'Sobre Nosotros')
 @section('activeSobre','active')
+@section('footermargin','mt-5')
 @section('content')
         <div class="container-fluid">
             <div class="row justify-content-center">

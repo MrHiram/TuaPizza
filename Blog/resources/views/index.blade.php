@@ -1,5 +1,6 @@
 @extends('layout')
 @section('title', 'Tua Pizza') 
+@section('footermargin','mt-5')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 @section('activeIndex','active')
 @section('content')
@@ -9,7 +10,7 @@
                     <p class="p--spacing pt-5">Dele viaje y empezá a</p>
                     <h1 class="h1 large">Crear tu Pizza</h1>
                     <a href="/create" class="btn btn-danger btn-rounded mt-3 px-5 mb-5">Comenzar</a>
-                    <a href="/signin" class="btn btn-outline-light btn-rounded mt-3 px-5 mb-5">Iniciar Sesion</a>
+                    <a href="/login" class="btn btn-outline-light btn-rounded mt-3 px-5 mb-5">Iniciar Sesion</a>
                 </div>
                 <div class="col-lg-6 col-12 d-flex justify-content-start justify-content-md-center justify-content-lg-around p-0">
                     <div class="container-pizza">
