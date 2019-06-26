@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use App\Ingredient;
 use Validator;
 class IngredientController extends Controller
@@ -35,18 +36,7 @@ class IngredientController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        /*$ingredient = new Ingredient;
-        $ingredient->name=$request->input('name');
-        $ingredient->price=$request->input('price');
-
-        $ingredient->btn_picture='btn_picture';
-        $ingredient->pizza_picture='pizza_picture';
-
-        $ingredient->category=$request->input('category');
-        $ingredient->save();*/
-
-        return $data;
+        //
     }
 
     /**
@@ -68,7 +58,8 @@ class IngredientController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ingredient = Ingredient::findOrFail($id);
+        return view('edit', compact('ingredient'));
     }
 
     /**
@@ -91,9 +82,15 @@ class IngredientController extends Controller
      */
     public function destroy($id)
     {        
+        $ingredient = Ingredient::findOrFail($id);
+        $filePath = 'img/'.$ingredient->btn_picture;
+        File::delete($filePath);
+        $filePath = 'img/'.$ingredient->pizza_picture;
+        File::delete($filePath);
         Ingredient::findOrFail($id)->delete();
         return redirect('/admin')->with('success', '¡Eliminado con exito!');
     }
+
     public function submitIngredient(Request $request){
         $validator = Validator::make($request->all(),
             [
@@ -126,6 +123,49 @@ class IngredientController extends Controller
         $ingredient->category=$request->input('category');
         $ingredient->save();
        
-        return  redirect('/Admin')->with('success', '¡Guardado exitosamente!');
+        return response()->json(['¡Guardado exitosamente!']);
+    }
+    public function updateIngredient(Request $request)
+    {
+        $validator = Validator::make($request->all(),
+            [
+                'btn_picture' => 'image',
+                'pizza_picture' => 'image',
+            ],
+            [
+                'btn_picture.image' => 'png',
+                'pizza_picture.image' => 'png',
+            ]);
+        if ($validator->fails())
+            return array(
+                'fail' => true,
+                'errors' => $validator->errors()
+        );     
+        if($request->file('btn_picture') != null && $request->file('btn_picture') != null){
+            $filePath = 'img/'.$request->btn_picture;
+            File::delete($filePath);
+            $filePath = 'img/'.$request->pizza_picture;
+            File::delete($filePath);
+
+
+            $filename = uniqid() . '_' . time() . '.' . 'png';
+            $request->btn_picture=$filename;
+            $request->file('btn_picture')->move('img', $filename);
+            Ingredient::whereId($request->id)->update(['btn_picture' => $filename]);
+
+            $filename = uniqid() . '_' . time() . '.' . 'png';
+            $request->pizza_picture=$filename;
+            $request->file('pizza_picture')->move('img', $filename);
+            Ingredient::whereId($request->id)->update(['pizza_picture' => $filename]);
+        }
+        $validateData = $request->validate([
+            'name' =>'required|max:100',
+            'price' =>'required|max:100',
+            'category' =>'required||max:100',
+        ]);            
+
+        Ingredient::whereId($request->id)->update($validateData);
+    
+        return response()->json(['¡Actualizado con éxito!']);
     }
 }

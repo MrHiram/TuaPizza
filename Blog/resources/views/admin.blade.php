@@ -16,14 +16,14 @@
             <div class="container-fluid overflow-hidden">
                 <div class="row justify-content-between py-3">
                     <h2 class="h3 pl-5 pt-2">Ingredientes</h2>
-                    <button type="button" class="btn btn-primary mt-2 mr-5" data-toggle="modal" data-target="#exampleModal">Añadir un ingrediente</button>
+                    <button type="button" class="btn btn-primary mt-2 mr-5" data-toggle="modal" data-target="#createIngredient">Añadir un ingrediente</button>
                 </div>
             </div>
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="createIngredient" tabindex="-1" role="dialog" aria-labelledby="createIngredientLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Añadir ingrediente</h5>
+                            <h5 class="modal-title" id="createIngredientLabel">Añadir ingrediente</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -31,18 +31,18 @@
                         <div class="modal-body">
                             <form id="formIngredient" class="mb-0">
                                 <label class="main-text"for="name">Nombre del ingrediente</label>
-                                <input id="name" type="text" class="form-control required mb-3" name="name" placeholder="Nombre" autofocus>
+                                <input id="name" type="text" class="form-control mb-3" name="name" placeholder="Nombre" required autofocus>
                                 
                                 <label class="main-text" for="price">Precio</label>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                     <span class="input-group-text">$</span>
                                     </div>
-                                    <input id="price" type="number" name="price" class="form-control required" placeholder="2">
+                                    <input id="price" type="number" name="price" class="form-control" placeholder="2" required>
                                 </div>
                                 
                                 <label class="main-text" for="category">Nombre del ingrediente</label>
-                                <select class="custom-select required mb-3" id="category" name="category">
+                                <select class="custom-select mb-3" id="category" name="category">
                                     <option value="Vegetales" selected>Vegetales</option>
                                     <option value="Frutas">Frutas</option>
                                     <option value="Especies">Especies</option>
@@ -53,31 +53,31 @@
                                 <label class="main-text" for="btn_picture">Imagen del botón</label>
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input required" id="btn_picture" name="btn_picture" accept="image/png">
+                                        <input type="file" class="custom-file-input" id="btn_picture" name="btn_picture" accept="image/png" required>
                                         <label class="custom-file-label" for="btn_picture">Escoge una image</label>
                                     </div>
                                 </div>
-                                <small id="" class="form-text text-muted mb-3">Solo imagenes png y tamaño 100px x 100px</small>
+                                <small id="" class="form-text text-muted mb-3">Solo imagenes png, tamaño 100px x 100px y menores a 100kb</small>
 
                                 
                                 <label class="main-text" for="btn_picture">Imagen de la pizza</label>
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input required" id="pizza_picture" name="pizza_picture" accept="image/png">
+                                        <input type="file" class="custom-file-input" id="pizza_picture" name="pizza_picture" accept="image/png" required>
                                         <label class="custom-file-label" for="btn_picture">Escoge una image</label>
                                     </div>
                                 </div>
-                                <small id="" class="form-text text-muted ">Solo imagenes png y tamaño 750px x 568px</small>
-                                <input type="submit" value="dsfadsf">
+                                <small id="" class="form-text text-muted ">Solo imagenes png, tamaño 750px x 568px y menores a 200kb</small>
+                                <div class="mt-3">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                    <input type="submit" class="btn btn-primary" value="Guardar"/>
+                                </div>
                             </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary" onclick="sendInfo()">Guardar</button>
                         </div>
                     </div>
                 </div>
             </div>
+            
             <div id="receipt" class="col-12">
                     <table class="table">
                     <thead class="thead-dark">
@@ -102,7 +102,7 @@
                             <td>{{$ingredientDB->category}}</td>
                             <td><a href="/img/{{$ingredientDB->btn_picture}}" target="_blank">Click!</a></td>
                             <td><a href="/img/{{$ingredientDB->pizza_picture}}" target="_blank">Click!</a></td>
-                            <td class="text-center"><button class="btn btn-success">Actualizar</button></td>
+                            <td class="text-center"><a class="btn btn-success" href="{{ route('ingredients.edit',$ingredientDB->id)}}">Actualizar</a></td>
                             <td class="text-center" >
                                 <form action="{{ route('ingredients.destroy', $ingredientDB->id)}}" method="post">
                                         @csrf

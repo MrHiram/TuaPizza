@@ -3,16 +3,18 @@ $("#formIngredient").submit(function(event){
     var form_data = new FormData(this);
     $btn_picture = $('#btn_picture')[0].files.length;
     $pizza_picture = $('#pizza_picture')[0].files.length;
-    if($('#name').val()!='' && $('#price').val()!='' && $btn_picture != 0 && $pizza_picture != 0){            
-        form_data.append('btn_picture', $('#btn_picture')[0].files[0]);
-        form_data.append('pizza_picture', $('#pizza_picture')[0].files[0]);
+    if($('#name').val()!='' && $('#price').val()!=''){            
+        if ($btn_picture != 0 && $pizza_picture != 0) {
+            form_data.append('btn_picture', $('#btn_picture')[0].files[0]);
+            form_data.append('pizza_picture', $('#pizza_picture')[0].files[0]);         
+        }
         $.ajaxSetup({
             headers: {    
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')    
             }    
         });
         $.ajax({
-            url: 'submitIngredient',
+            url: '/updateIngredient',
             type:'post',
             data:form_data,
             contentType: false,
@@ -25,8 +27,6 @@ $("#formIngredient").submit(function(event){
                         $(window).trigger("Accept");
                     };
                 }(window.alert, window.jQuery);
-                
-                
                 $(window).on("Accept", function() {
                     window.location.href = '/admin';
                 });
