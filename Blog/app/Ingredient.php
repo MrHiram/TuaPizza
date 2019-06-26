@@ -12,6 +12,6 @@ class Ingredient extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'price', 'btn_picture', 'pizza_picture',
+        'name', 'price', 'btn_picture', 'pizza_picture','category',
     ];
 }

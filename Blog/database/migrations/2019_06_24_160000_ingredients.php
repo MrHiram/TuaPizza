@@ -19,6 +19,8 @@ class Ingredients extends Migration
             $table->double('price', 8 , 2);
             $table->string('btn_picture');
             $table->string('pizza_picture');
+            $table->string('category');
+            $table->timestamps();
         });
     }
 

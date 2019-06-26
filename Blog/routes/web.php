@@ -23,7 +23,9 @@ Route::get('/menu', 'MainController@menu');
 Route::get('/about', 'MainController@about');
 Route::get('/create', 'MainController@create');
 Route::post('/submitOrder', 'CreateController@submitOrder');
+Route::post('/submitIngredient', 'IngredientController@submitIngredient');
 Route::get('/admin', 'MainController@admin');
+Route::resource('ingredients', 'IngredientController');
 
 Auth::routes();
 ?>

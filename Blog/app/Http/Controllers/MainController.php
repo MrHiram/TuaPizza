@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Ingredient;
 
 class MainController extends Controller
 {
@@ -98,6 +99,7 @@ class MainController extends Controller
         return view('create');
     }
     public function admin(){
-        return view('admin');
+        $ingredientsDB = Ingredient::All();
+        return view('admin', compact('ingredientsDB'));
     }
 }
