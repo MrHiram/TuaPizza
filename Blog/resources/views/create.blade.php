@@ -16,6 +16,11 @@
                     <h3 class="h3"> Empieza a Crear</h3>
                     <div class="container-pizza d-block text-left">
                         <img src="img/plain-pizza.jpg" class="img-fluid position-absolute w-100 pr-5 pr-lg-0" alt="" style="z-index: 0">
+                        <?php
+                        foreach($ingredientsDB as $ingredientDB){
+                            echo "<img src='img/ ".$ingredientDB['pizza_picture']."' class='img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0' alt='' style='z-index: 1' id='mozarrella'>";
+                        }
+                        ?>
                         <img src="img/mozarrella.png" class="img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0" alt="" style="z-index: 1" id="mozarrella">
                         <img src="img/cheddar.png" class="img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0" alt="" style="z-index: 1" id="cheddar">
                         <img src="img/tomates.png" class="img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0" alt="" style="z-index: 2" id="tomates">

@@ -20,6 +20,8 @@ class Ingredients extends Migration
             $table->string('btn_picture');
             $table->string('pizza_picture');
             $table->string('category');
+            $table->string('tag_id');
+            $table->string('z_index');
             $table->timestamps();
         });
     }
