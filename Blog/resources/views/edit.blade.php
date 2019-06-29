@@ -30,6 +30,14 @@
                         <input id="price" type="number" name="price" class="form-control" value="{{$ingredient->price}}" required>
                     </div>
                     
+                    <label class="main-text" for="order">Escoja la capa del 1 al 20</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text">Orden</span>
+                        </div>
+                        <input id="order" type="number" name="order" class="form-control" step="1" min="1" max="20" placeholder="20" required>
+                    </div>
+                    
                     <label class="main-text" for="category">Nombre del ingrediente</label>
                     <select class="custom-select mb-3" id="category" name="category">
                         <option value="Vegetales" <?php echo ($ingredient->category == 'Vegetales' ? 'selected' : ''); ?>>Vegetales</option>
