@@ -12,11 +12,11 @@
 @endsection  
 @section('content')
     <section>
-        <div class="container-fluid pr-0">
+        <div class="container-fluid px-0">
             <div class="container-fluid overflow-hidden">
                 <div class="row justify-content-between py-3">
                     <h2 class="h3 pl-5 pt-2">Ingredientes</h2>
-                    <button type="button" class="btn btn-primary mt-2 mr-5" data-toggle="modal" data-target="#createIngredient">Añadir un ingrediente</button>
+                    <button type="button" class="btn btn-primary mt-2 mr-5 ml-5" data-toggle="modal" data-target="#createIngredient">Añadir un ingrediente</button>
                 </div>
             </div>
             <div class="modal fade" id="createIngredient" tabindex="-1" role="dialog" aria-labelledby="createIngredientLabel" aria-hidden="true">
@@ -86,7 +86,7 @@
                 </div>
             </div>
             
-            <div id="receipt" class="col-12">
+            <div class="table-responsive">
                     <table class="table">
                     <thead class="thead-dark">
                         <tr>
