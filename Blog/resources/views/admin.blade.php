@@ -65,6 +65,7 @@
                                         <label class="custom-file-label" for="btn_picture">Escoge una image</label>
                                     </div>
                                 </div>
+                                
                                 <small id="" class="form-text text-muted mb-3">Solo imagenes png, tamaño 100px x 100px y menores a 100kb</small>
 
                                 

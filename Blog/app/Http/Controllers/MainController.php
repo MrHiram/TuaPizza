@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Ingredient;
+use App\Drink;
 
 class MainController extends Controller
 {
@@ -97,7 +98,8 @@ class MainController extends Controller
     }
     public function create(){
         $ingredientsDB = Ingredient::All();
-        return view('create', compact('ingredientsDB'));
+        $drinksDB = Drink::All();
+        return view('create', compact('ingredientsDB', 'drinksDB'));
     }
     public function admin(){
         $ingredientsDB = Ingredient::All();

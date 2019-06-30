@@ -34,7 +34,6 @@ class ingredientSeeder extends Seeder
         ];
 
          $len =count($ingredients);
-         $lenInner =count($ingredients[0]);
 
         for($i=0; $i<$len; $i++){
             $ingredient = new Ingredient();

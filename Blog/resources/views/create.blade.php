@@ -86,9 +86,14 @@
                 </div>
                 <div id="drinkSelector" class="col-12 flex-wrap justify-content-center pb-5 disp-none">
                     <div class="col-12 d-flex flex-wrap justify-content-center my-5 py-5">
-                        <div id="drink-2" class="item col-4 col-lg-3 text-center"><button class='btn p-0' onclick='changeDrinkImg(this)' value="2"><img class="col-12 px-0 image-fluid logo-size" src="img/fanta.png"></button></div>
+                        <?php
+                            foreach ($drinksDB as $drinkDB) {
+                                echo "<div id='drink-'".$drinkDB['id']."' class='item col-4 col-lg-3 text-center '><button class='btn p-0' onclick='changeDrinkImg(this)' value=".$drinkDB['id']."><img class='col-12 px-0 image-fluid logo-size' src='img/".$drinkDB['picture']."'></button></div>";
+                            }
+                        ?>
+                        <!--<div id="drink-2" class="item col-4 col-lg-3 text-center"><button class='btn p-0' onclick='changeDrinkImg(this)' value="2"><img class="col-12 px-0 image-fluid logo-size" src="img/fanta.png"></button></div>
                         <div id="drink-0" class="item col-4 col-lg-3 text-center order-1"><button disabled='disabled' class='btn p-0 selectedBtn' onclick='changeDrinkImg(this)' value="0"><img class="col-12 px-0 image-fluid logo-size selected" src="img/cocacola.png"></button></div>
-                        <div id="drink-1" class="item col-4 col-lg-3 text-center order-2"><button class='btn p-0' onclick='changeDrinkImg(this)' value="1"><img class="col-12 px-0 image-fluid logo-size rounded-circle" src="img/gingerale.jpg"></button></div>
+                        <div id="drink-1" class="item col-4 col-lg-3 text-center order-2"><button class='btn p-0' onclick='changeDrinkImg(this)' value="1"><img class="col-12 px-0 image-fluid logo-size rounded-circle" src="img/gingerale.jpg"></button></div>-->
                     </div>
                     <div class="col-12 col-lg-2">
                         <p class="main-text large text-dark">Bebida</p>

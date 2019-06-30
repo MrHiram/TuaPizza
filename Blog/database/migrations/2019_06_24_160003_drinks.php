@@ -16,8 +16,11 @@ class Drinks extends Migration
         Schema::create('drinks', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->double('price', 8, 2);
+            $table->double('price3L', 8, 2);
+            $table->double('price1L', 8, 2);
+            $table->double('price600ml', 8, 2);
             $table->string('picture');
+            $table->timestamps();
         });
     }
 
