@@ -101,8 +101,5 @@ class MainController extends Controller
         $drinksDB = Drink::All();
         return view('create', compact('ingredientsDB', 'drinksDB'));
     }
-    public function admin(){
-        $ingredientsDB = Ingredient::All();
-        return view('admin', compact('ingredientsDB'));
-    }
+   
 }

@@ -12,9 +12,10 @@
                 </div>
                 <form id="formLogin" method="post"action="{{ route('login') }}" class="form-group pt-5">
                     @csrf
+                  
         	        <label class="main-text pt-3" for="email">Correo electronico</label>
                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="correo@email.com"> 
-
+                   
         	        <label class="main-text pt-3" for="Password">Contraseña</label>
                     <input id="password" type="password" class="form-control @error('email') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="password">
                     @error('email')
@@ -36,6 +37,10 @@
                 </form>
                 <form id="formRegister" method="post" action="{{ route('register') }}" class="form-group pt-5">
                     @csrf
+
+                    <input id="role" type="hidden" value={{ ('2') }} name="role">
+
+                    <input id="picture" type="hidden" value="avatar.png" name="picture">
         	        <label class="main-text pt-3"for="name">Nombre de usuario</label>
                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="Nombre" autofocus>
                     @error('name')
@@ -66,7 +71,7 @@
 
 
                     <button class="btn btn-red bold col-12 mt-3">{{ __('Registrarse') }}</button>
-                    <p class="text-center main-text light mt-2">¿Aun no tienes cuenta? <a href="login" onClick="return false;" id="login">Registrate</a></p>
+                    <p class="text-center main-text light mt-2">¿Ya tienes cuenta? <a href="login" onClick="return false;" id="login">Regresar</a></p>
                 </form>
             </div>
         </div>

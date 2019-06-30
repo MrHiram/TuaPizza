@@ -3,6 +3,7 @@
 @section('footermargin','mt-5')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 @section('activeIndex','active')
+@section('overFLow', 'overflow-hidden')
 @section('content')
         <div class="container-fluid">
             <div class="row main-padding text-center text-lg-left">
