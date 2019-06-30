@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Ingredient;
 
-class ingredientSeeder extends Seeder
+class IngredientSeeder extends Seeder
 {
     /**
      * Run the database seeds.

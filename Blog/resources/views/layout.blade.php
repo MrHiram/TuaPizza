@@ -27,7 +27,7 @@
 
 </head>
 <body>
-    <header class="bg--img__wall overflow-hidden">
+    <header class="bg--img__wall @yield('overFLow')">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <a href="/" class="navbar-brand ml-5"><img src="@yield('recoverlogo')img/logo.png" class="logo" alt="">Tua Pizza</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,6 +49,9 @@
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-left px-3">
                                         <a href="/profile" class="text-dark"><i class="fas fa-user"></i>&#160; Perfil</a>
+                                        @if (Auth::user()->role==1)
+                                        <br><a href="/admin" class="text-dark"><i class="fas fa-edit"></i>&#160; Admin</a>
+                                        @endif
                                         <div class="dropdown-divider"></div>
                                         <a href="{{ route('logout') }}" class="text-dark" onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
@@ -60,7 +63,7 @@
                                     </div>
                                 </div>
                             </li>
-                        @else
+                            @else
                             <li class="nav-item @yield('activeInicio')"><a href="{{ route('login') }}" class="nav-link mx-3">Iniciar Sesión</a></li>
                         @endif
                     @endif
