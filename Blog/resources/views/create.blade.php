@@ -18,27 +18,9 @@
                         <img src="img/plain-pizza.jpg" class="img-fluid position-absolute w-100 pr-5 pr-lg-0" alt="" style="z-index: 0">
                         <?php
                         foreach($ingredientsDB as $ingredientDB){
-                            echo "<img src='img/ ".$ingredientDB['pizza_picture']."' class='img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0' alt='' style='z-index: 1' id='mozarrella'>";
+                            echo "<img src='img/".$ingredientDB['pizza_picture']."' class='img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0' alt='' style='z-index:  ".$ingredientDB['z_index']."' id='".$ingredientDB['tag_id']."'>";
                         }
                         ?>
-                        <img src="img/mozarrella.png" class="img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0" alt="" style="z-index: 1" id="mozarrella">
-                        <img src="img/cheddar.png" class="img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0" alt="" style="z-index: 1" id="cheddar">
-                        <img src="img/tomates.png" class="img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0" alt="" style="z-index: 2" id="tomates">
-                        <img src="img/peperoni.png" class="img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0" alt="" style="z-index: 3" id="peperoni">
-                        <img src="img/pepinillos.png" class="img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0" alt="" style="z-index: 4" id="pepinillos">
-                        <img src="img/salchicha.png" class="img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0" alt="" style="z-index: 5" id="salchicha">
-                        <img src="img/carne_molida.png" class="img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0" alt="" style="z-index: 6" id="carnemolida">
-                        <img src="img/greenPepper.png" class="img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0" alt="" style="z-index: 7" id="greenpepper">
-                        <img src="img/mushroom.png" class="img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0" alt="" style="z-index: 8" id="mushroom">
-                        <img src="img/bacon.png" class="img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0" alt="" style="z-index: 9" id="bacon">
-                        <img src="img/cebolla.png" class="img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0" alt="" style="z-index: 10" id="cebolla">
-                        <img src="img/chicken.png" class="img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0" alt="" style="z-index: 11" id="chicken">
-                        <img src="img/manzana.png" class="img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0" alt="" style="z-index: 12" id="manzana">
-                        <img src="img/piña.png" class="img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0" alt="" style="z-index: 13" id="pina">
-                        <img src="img/limones.png" class="img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0" alt="" style="z-index: 14" id="limones">
-                        <img src="img/olives.png" class="img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0" alt="" style="z-index: 15" id="olives">
-                        <img src="img/basil.png" class="img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0" alt="" style="z-index: 16" id="basil">
-                        <img src="img/cilantro.png" class="img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0" alt="" style="z-index: 17" id="cilantro">
                     </div>
                     <label for="" class="main-text bold large text-dark">Monto a Cancelar</label>
                     <div class="card col-6 offset-3 text-left">
@@ -49,47 +31,69 @@
                     <label class="main-text medium text-dark mb-0">Elegí tus vegetales favoritos:<br class='d-sm-none'><span class='p-0 pl-sm-3'>$2 C/U</span></label>
                     <hr class="border-top my-2">
                     <ul class="d-flex flex-wrap list-unstyled">
-                        <li class="p-0 mx-4 my-4 my-sm-2"><button onClick="addIngredient(this)" value="2" data-toggle="tooltip" data-placement="top" title="Chile verde" id="greenpepper" class="btn bg-white width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-green-peppers.png" alt=""><p class='d-block d-sm-none main-text py-2'>Chile verde</p></button></li>
-                        <li class="p-0 mx-4 my-4 my-sm-2"><button onClick="addIngredient(this)" value="2" data-toggle="tooltip" data-placement="top" title="Aceitunas" id="olives" class="btn bg-white width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-olivas.png" alt=""><p class='d-block d-sm-none main-text py-2 text-nowrap'>Aceitunas</p></button></li>
-                        <li class="p-0 mx-4 my-4 my-sm-2"><button onClick="addIngredient(this)" value="2" data-toggle="tooltip" data-placement="top" title="Hongos" id="mushroom" class="btn bg-white width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-hongos.png" alt=""><p class='d-block d-sm-none main-text py-2'>Hongos</p></button></li>
-                        <li class="p-0 mx-4 my-4 my-sm-2"><button onClick="addIngredient(this)" value="2" data-toggle="tooltip" data-placement="top" title="Pepinillos" id="pepinillos" class="btn bg-white width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-pepinillo.png" alt=""><p class='d-block d-sm-none main-text py-2 text-nowrap'>Pepinillos</p></button></li>
-                        <li class="p-0 mx-4 my-4 my-sm-2"><button onClick="addIngredient(this)" value="2" data-toggle="tooltip" data-placement="top" title="Cebolla morada" id="cebolla" class="btn bg-white width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-cebolla.png" alt=""><p class='d-block d-sm-none main-text py-2'>Cebolla morada</p></button></li>                    
+                        <?php
+                        foreach($ingredientsDB as $ingredientDB){
+                            if($ingredientDB['category'] == 'Vegetales'){
+                                echo "<li class='p-0 mx-4 my-4 my-sm-2'><button onClick='addIngredient(this)' value='".$ingredientDB['price']."' data-toggle='tooltip' data-placement='top' title='".$ingredientDB['name']."' id='".$ingredientDB['tag_id']."' class='btn bg-white width btn-outline-light rounded-circle shadow-sm p-0'><img class='img-fluid' src='/img/".$ingredientDB['btn_picture']."' alt=''><p class='d-block d-sm-none main-text py-2 text-nowrap'>".$ingredientDB['name']."</p></button></li>";
+                            }
+                        }
+                        ?>              
                     </ul>
                     <label class="main-text medium text-dark mt-4 mt-sm-0 mb-0">Elegí tus frutas favoritas:<br class='d-sm-none'><span class='p-0 pl-sm-3'>$2 C/U</span></label>
                     <hr class="border-top my-2">
                     <ul class="d-flex flex-wrap list-unstyled">
-                        <li class="p-0 mx-4 my-4 my-sm-2"><button onClick="addIngredient(this)" value="2" data-toggle="tooltip" data-placement="top" title="Tomate" id="tomates" class="btn bg-white width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-tomate.png" alt=""><p class='d-block d-sm-none main-text py-2'>Tomate</p></button></li>
-                        <li class="p-0 mx-4 my-4 my-sm-2"><button onClick="addIngredient(this)" value="2" data-toggle="tooltip" data-placement="top" title="Limon" id="limones" class="btn bg-white width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-limon.png" alt=""><p class='d-block d-sm-none main-text py-2'>Limon</p></button></li>
-                        <li class="p-0 mx-4 my-4 my-sm-2"><button onClick="addIngredient(this)" value="2" data-toggle="tooltip" data-placement="top" title="Manzana" id="manzana" class="btn bg-white width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-manzanas.png" alt=""><p class='d-block d-sm-none main-text py-2 text-nowrap'>Manzana</p></button></li>
-                        <li class="p-0 mx-4 my-4 my-sm-2"><button onClick="addIngredient(this)" value="2" data-toggle="tooltip" data-placement="top" title="Piña" id="pina" class="btn bg-white width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-pina.png" alt=""><p class='d-block d-sm-none main-text py-2'>Piña</p></button></li>
+                        <?php
+                        foreach($ingredientsDB as $ingredientDB){
+                            if($ingredientDB['category'] == 'Frutas'){
+                                echo "<li class='p-0 mx-4 my-4 my-sm-2'><button onClick='addIngredient(this)' value='".$ingredientDB['price']."' data-toggle='tooltip' data-placement='top' title='".$ingredientDB['name']."' id='".$ingredientDB['tag_id']."' class='btn bg-white width btn-outline-light rounded-circle shadow-sm p-0'><img class='img-fluid' src='/img/".$ingredientDB['btn_picture']."' alt=''><p class='d-block d-sm-none main-text py-2 text-nowrap'>".$ingredientDB['name']."</p></button></li>";
+                            }
+                        }
+                        ?>   
                     </ul>
                     <label class="main-text medium text-dark mb-0">Elegí tus especies favoritas:<br class='d-sm-none'><span class='p-0 pl-sm-3'>$1 C/U</span></label>
                     <hr class="border-top my-4 my-sm-2">
                     <ul class="d-flex flex-wrap list-unstyled">
-                        <li class="p-0 mx-4 my-4 my-sm-2"><button onClick="addIngredient(this)" value="1" data-toggle="tooltip" data-placement="top" title="Albahaca" id="basil" class="btn bg-white width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-albahaca.png" alt=""><p class='d-block d-sm-none main-text py-2 text-nowrap'>Albahaca</p></button></li>
-                        <li class="p-0 mx-4 my-4 my-sm-2"><button onClick="addIngredient(this)" value="1" data-toggle="tooltip" data-placement="top" title="Culantro" id="cilantro" class="btn bg-white width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-culantro.png" alt=""><p class='d-block d-sm-none main-text py-2 text-nowrap'>Culantro</p></button></li>
+                        <?php
+                        foreach($ingredientsDB as $ingredientDB){
+                            if($ingredientDB['category'] == 'Especies'){
+                                echo "<li class='p-0 mx-4 my-4 my-sm-2'><button onClick='addIngredient(this)' value='".$ingredientDB['price']."' data-toggle='tooltip' data-placement='top' title='".$ingredientDB['name']."' id='".$ingredientDB['tag_id']."' class='btn bg-white width btn-outline-light rounded-circle shadow-sm p-0'><img class='img-fluid' src='/img/".$ingredientDB['btn_picture']."' alt=''><p class='d-block d-sm-none main-text py-2 text-nowrap'>".$ingredientDB['name']."</p></button></li>";
+                            }
+                        }
+                        ?>
                     </ul>
                     <label class="main-text medium text-dark mb-0">Elegí tus carnes favoritas:<br class='d-sm-none'><span class='p-0 pl-sm-3'>$3 C/U</span></label>
                     <hr class="border-top my-2">
                     <ul class="d-flex flex-wrap list-unstyled">
-                        <li class="p-0 mx-4 my-5 my-sm-2"><button onClick="addIngredient(this)" value="3" data-toggle="tooltip" data-placement="top" title="Pollo" id="chicken" class="btn bg-white width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-pollo.png" alt=""><p class='d-block d-sm-none main-text py-2'>Pollo</p></button></li>
-                        <li class="p-0 mx-4 my-5 my-sm-2"><button onClick="addIngredient(this)" value="3" data-toggle="tooltip" data-placement="top" title="Carne molida" id="carnemolida" class="btn bg-white width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-carneMolida.png" alt=""><p class='d-block d-sm-none main-text py-2'>Carne molida</p></button></li>
-                        <li class="p-0 mx-4 my-4 my-sm-2"><button onClick="addIngredient(this)" value="3" data-toggle="tooltip" data-placement="top" title="Tocineta" id="bacon" class="btn bg-white width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-bacon.png" alt=""><p class='d-block d-sm-none main-text py-2 text-nowrap'>Tocineta</p></button></li>
-                        <li class="p-0 mx-4 my-4 my-sm-2"><button onClick="addIngredient(this)" value="3" data-toggle="tooltip" data-placement="top" title="Salchicha" id="salchicha" class="btn bg-white width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-salchicha.png" alt=""><p class='d-block d-sm-none main-text py-2 text-nowrap'>Salchicha</p></button></li>
-                        <li class="p-0 mx-4 my-4 my-sm-2"><button onClick="addIngredient(this)" value="3" data-toggle="tooltip" data-placement="top" title="Pepperoni" id="peperoni" class="btn bg-white width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-peperoni.png" alt=""><p class='d-block d-sm-none main-text py-2 text-nowrap'>Pepperoni</p></button></li>                    
+                        <?php
+                        foreach($ingredientsDB as $ingredientDB){
+                            if($ingredientDB['category'] == 'Carnes'){
+                                echo "<li class='p-0 mx-4 my-4 my-sm-2'><button onClick='addIngredient(this)' value='".$ingredientDB['price']."' data-toggle='tooltip' data-placement='top' title='".$ingredientDB['name']."' id='".$ingredientDB['tag_id']."' class='btn bg-white width btn-outline-light rounded-circle shadow-sm p-0'><img class='img-fluid' src='/img/".$ingredientDB['btn_picture']."' alt=''><p class='d-block d-sm-none main-text py-2 text-nowrap'>".$ingredientDB['name']."</p></button></li>";
+                            }
+                        }
+                        ?>
                     </ul>
                     <label class="main-text medium text-dark mb-0">Elegí tus queso favorito:<br class='d-sm-none'><span class='p-0 pl-sm-3'>$5 C/U</span></label>
                     <hr class="border-top my-2">
                     <ul class="d-flex flex-wrap list-unstyled">
-                        <li class="p-0 mx-4 my-4 my-sm-2"><button onClick="addIngredient(this)" value="5" data-toggle="tooltip" data-placement="top" title="Cheddar" id="cheddar" class="btn bg-white width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-cheddar.png" alt=""><p class='d-block d-sm-none main-text py-2 text-nowrap'>Cheddar</p></button></li>
-                        <li class="p-0 mx-4 my-4 my-sm-2"><button onClick="addIngredient(this)" value="5" data-toggle="tooltip" data-placement="top" title="Mozarrella" id="mozarrella" class="btn bg-white width btn-outline-light rounded-circle shadow-sm p-0"><img class="img-fluid" src="/img/btn-mozarrella.png" alt=""><p class='d-block d-sm-none main-text py-2 text-nowrap'>Mozarrella</p></button></li>
+                        <?php
+                        foreach($ingredientsDB as $ingredientDB){
+                            if($ingredientDB['category'] == 'Quesos'){
+                                echo "<li class='p-0 mx-4 my-4 my-sm-2'><button onClick='addIngredient(this)' value='".$ingredientDB['price']."' data-toggle='tooltip' data-placement='top' title='".$ingredientDB['name']."' id='".$ingredientDB['tag_id']."' class='btn bg-white width btn-outline-light rounded-circle shadow-sm p-0'><img class='img-fluid' src='/img/".$ingredientDB['btn_picture']."' alt=''><p class='d-block d-sm-none main-text py-2 text-nowrap'>".$ingredientDB['name']."</p></button></li>";
+                            }
+                        }
+                        ?>
                     </ul>
                 </div>
                 <div id="drinkSelector" class="col-12 flex-wrap justify-content-center pb-5 disp-none">
                     <div class="col-12 d-flex flex-wrap justify-content-center my-5 py-5">
-                        <div id="drink-2" class="item col-4 col-lg-3 text-center"><button class='btn p-0' onclick='changeDrinkImg(this)' value="2"><img class="col-12 px-0 image-fluid logo-size" src="img/fanta.png"></button></div>
+                        <?php
+                            foreach ($drinksDB as $drinkDB) {
+                                echo "<div id='drink-'".$drinkDB['id']."' class='item col-4 col-lg-3 text-center '><button class='btn p-0' onclick='changeDrinkImg(this)' value=".$drinkDB['id']."><img class='col-12 px-0 image-fluid logo-size' src='img/".$drinkDB['picture']."'></button></div>";
+                            }
+                        ?>
+                        <!--<div id="drink-2" class="item col-4 col-lg-3 text-center"><button class='btn p-0' onclick='changeDrinkImg(this)' value="2"><img class="col-12 px-0 image-fluid logo-size" src="img/fanta.png"></button></div>
                         <div id="drink-0" class="item col-4 col-lg-3 text-center order-1"><button disabled='disabled' class='btn p-0 selectedBtn' onclick='changeDrinkImg(this)' value="0"><img class="col-12 px-0 image-fluid logo-size selected" src="img/cocacola.png"></button></div>
-                        <div id="drink-1" class="item col-4 col-lg-3 text-center order-2"><button class='btn p-0' onclick='changeDrinkImg(this)' value="1"><img class="col-12 px-0 image-fluid logo-size rounded-circle" src="img/gingerale.jpg"></button></div>
+                        <div id="drink-1" class="item col-4 col-lg-3 text-center order-2"><button class='btn p-0' onclick='changeDrinkImg(this)' value="1"><img class="col-12 px-0 image-fluid logo-size rounded-circle" src="img/gingerale.jpg"></button></div>-->
                     </div>
                     <div class="col-12 col-lg-2">
                         <p class="main-text large text-dark">Bebida</p>

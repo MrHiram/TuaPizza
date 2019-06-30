@@ -36,6 +36,8 @@
                 </form>
                 <form id="formRegister" method="post" action="{{ route('register') }}" class="form-group pt-5">
                     @csrf
+                    <input id="role" type="hidden" value="2" name="role">
+                    <input id="picture" type="hidden" value="avatar.png" name="picture">
         	        <label class="main-text pt-3"for="name">Nombre de usuario</label>
                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="Nombre" autofocus>
                     @error('name')
@@ -66,7 +68,7 @@
 
 
                     <button class="btn btn-red bold col-12 mt-3">{{ __('Registrarse') }}</button>
-                    <p class="text-center main-text light mt-2">¿Aun no tienes cuenta? <a href="login" onClick="return false;" id="login">Registrate</a></p>
+                    <p class="text-center main-text light mt-2">¿Ya tienes cuenta? <a href="login" onClick="return false;" id="login">Regresar</a></p>
                 </form>
             </div>
         </div>

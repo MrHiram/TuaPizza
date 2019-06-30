@@ -109,6 +109,8 @@ class IngredientController extends Controller
         $ingredient = new Ingredient;
         $ingredient->name=$request->input('name');
         $ingredient->price=$request->input('price');
+        $ingredient->tag_id=uniqid();
+        $ingredient->z_index=$request->input('order');
         
         $filename = uniqid() . '_' . time() . '.' . 'png';
         
@@ -162,6 +164,7 @@ class IngredientController extends Controller
             'name' =>'required|max:100',
             'price' =>'required|max:100',
             'category' =>'required||max:100',
+            'order' =>'required||max:100',
         ]);            
 
         Ingredient::whereId($request->id)->update($validateData);

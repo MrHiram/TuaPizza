@@ -12,11 +12,11 @@
 @endsection  
 @section('content')
     <section>
-        <div class="container-fluid pr-0">
+        <div class="container-fluid px-0">
             <div class="container-fluid overflow-hidden">
                 <div class="row justify-content-between py-3">
                     <h2 class="h3 pl-5 pt-2">Ingredientes</h2>
-                    <button type="button" class="btn btn-primary mt-2 mr-5" data-toggle="modal" data-target="#createIngredient">Añadir un ingrediente</button>
+                    <button type="button" class="btn btn-primary mt-2 mr-5 ml-5" data-toggle="modal" data-target="#createIngredient">Añadir un ingrediente</button>
                 </div>
             </div>
             <div class="modal fade" id="createIngredient" tabindex="-1" role="dialog" aria-labelledby="createIngredientLabel" aria-hidden="true">
@@ -40,7 +40,15 @@
                                     </div>
                                     <input id="price" type="number" name="price" class="form-control" placeholder="2" required>
                                 </div>
-                                
+                                    
+                                <label class="main-text" for="order">Escoja la capa del 1 al 20</label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">Orden</span>
+                                    </div>
+                                    <input id="order" type="number" name="order" class="form-control" step="1" min="1" max="20" placeholder="20" required>
+                                </div>
+
                                 <label class="main-text" for="category">Nombre del ingrediente</label>
                                 <select class="custom-select mb-3" id="category" name="category">
                                     <option value="Vegetales" selected>Vegetales</option>
@@ -49,7 +57,7 @@
                                     <option value="Carnes">Carnes</option>
                                     <option value="Quesos">Quesos</option>
                                 </select>
-                                
+
                                 <label class="main-text" for="btn_picture">Imagen del botón</label>
                                 <div class="input-group">
                                     <div class="custom-file">
@@ -57,6 +65,7 @@
                                         <label class="custom-file-label" for="btn_picture">Escoge una image</label>
                                     </div>
                                 </div>
+                                
                                 <small id="" class="form-text text-muted mb-3">Solo imagenes png, tamaño 100px x 100px y menores a 100kb</small>
 
                                 
@@ -78,7 +87,7 @@
                 </div>
             </div>
             
-            <div id="receipt" class="col-12">
+            <div class="table-responsive">
                     <table class="table">
                     <thead class="thead-dark">
                         <tr>
