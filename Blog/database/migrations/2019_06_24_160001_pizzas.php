@@ -15,9 +15,10 @@ class Pizzas extends Migration
     {
         Schema::create('pizzas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->double('base_price', 8, 2);
-            $table->double('total_price', 8, 2);
-            $table->string('picture');
+            $table->double('base_price', 8, 2)->nullable();
+            $table->double('total_price', 8, 2)->nullable();
+            $table->string('picture')->nullable();
+            $table->timestamps();
         });
     }
 

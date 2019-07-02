@@ -19,6 +19,7 @@ class Orders extends Migration
             $table->bigInteger('pizza_id')->unsigned();
             $table->string('direction');
             $table->string('phone');
+            $table->timestamps();
         });
         Schema::table('orders',function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users');

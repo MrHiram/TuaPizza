@@ -32,6 +32,9 @@ function sendInfo(){
                 if(data.success){
                     deliveryApproved();
                 }
+            },
+            error:function(data){
+                console.log(data);
             }
 
         });

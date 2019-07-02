@@ -24,7 +24,7 @@
                     </div>
                     <label for="" class="main-text bold large text-dark">Monto a Cancelar</label>
                     <div class="card col-6 offset-3 text-left">
-                        <p id="pizzaValue" class="main-text text-dark my-2">$ 10</p>
+                        <p id="pizzaValue" class="main-text text-dark my-2">$ 5</p>
                     </div>
                 </div>
                 <div id="ingredientSelector" class="col-12 col-md-6 p-5 ">
@@ -88,19 +88,26 @@
                     <div class="col-12 d-flex flex-wrap justify-content-center my-5 py-5">
                         <?php
                             foreach ($drinksDB as $drinkDB) {
-                                echo "<div id='drink-'".$drinkDB['id']."' class='item col-4 col-lg-3 text-center '><button class='btn p-0' onclick='changeDrinkImg(this)' value=".$drinkDB['id']."><img class='col-12 px-0 image-fluid logo-size' src='img/".$drinkDB['picture']."'></button></div>";
+                                switch ($drinkDB['id']) {
+                                    case '0':
+                                        echo "<div id='drink-".$drinkDB['id']."' class='item col-4 col-lg-3 text-center order-1'><button disabled='disabled' class='btn p-0 selectedBtn' onclick='changeDrinkImg(this)' value=".$drinkDB['id']."><img class='col-12 px-0 image-fluid logo-size selected' src='img/".$drinkDB['picture']."'></button></div>";
+                                        break;
+                                    case '1':
+                                        echo "<div id='drink-".$drinkDB['id']."' class='item col-4 col-lg-3 text-center order-2'><button class='btn p-0' onclick='changeDrinkImg(this)' value=".$drinkDB['id']."><img class='col-12 px-0 image-fluid logo-size selected' src='img/".$drinkDB['picture']."'></button></div>";
+                                        break;
+                                    case '2':
+                                        echo "<div id='drink-".$drinkDB['id']."' class='item col-4 col-lg-3 text-center'><button class='btn p-0' onclick='changeDrinkImg(this)' value=".$drinkDB['id']."><img class='col-12 px-0 image-fluid logo-size' src='img/".$drinkDB['picture']."'></button></div>";
+                                        break;
+                                }
                             }
                         ?>
-                        <!--<div id="drink-2" class="item col-4 col-lg-3 text-center"><button class='btn p-0' onclick='changeDrinkImg(this)' value="2"><img class="col-12 px-0 image-fluid logo-size" src="img/fanta.png"></button></div>
-                        <div id="drink-0" class="item col-4 col-lg-3 text-center order-1"><button disabled='disabled' class='btn p-0 selectedBtn' onclick='changeDrinkImg(this)' value="0"><img class="col-12 px-0 image-fluid logo-size selected" src="img/cocacola.png"></button></div>
-                        <div id="drink-1" class="item col-4 col-lg-3 text-center order-2"><button class='btn p-0' onclick='changeDrinkImg(this)' value="1"><img class="col-12 px-0 image-fluid logo-size rounded-circle" src="img/gingerale.jpg"></button></div>-->
                     </div>
                     <div class="col-12 col-lg-2">
                         <p class="main-text large text-dark">Bebida</p>
                         <select onchange="changeDrink(this)" class="btn btn-outline-secondary col-12" id="inputGroupSelect01">
-                            <option selected value="0">Coca-Cola</option>
-                            <option value="1">Giger Ale</option>
-                            <option value="2">Fanta Naranja</option>
+                            <option selected value="0">{{$drinksDB['0']['name']}}</option>
+                            <option value="1">{{$drinksDB['1']['name']}}</option>
+                            <option value="2">{{$drinksDB['2']['name']}}</option>
                         </select>
                     </div>
                     <div class="col-12 col-lg-2 offset-lg-1">
@@ -149,10 +156,10 @@
                             <thead>
                                 <tr>
                                     <th scope="col" class="main-text medium text-dark">Pizza</th>
-                                    <th scope="col" class="main-text medium text-dark">$ 14</th>
+                                    <th id="totalCost" scope="col" class="main-text medium text-dark"></th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody  id="receipt">
                                 <tr>
                                     <td class="pl-3">Hongos</td>
                                     <td>$ 2</td>
