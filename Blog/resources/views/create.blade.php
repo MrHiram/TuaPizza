@@ -24,7 +24,7 @@
                     </div>
                     <label for="" class="main-text bold large text-dark">Monto a Cancelar</label>
                     <div class="card col-6 offset-3 text-left">
-                        <p id="pizzaValue" class="main-text text-dark my-2">$ 10</p>
+                        <p id="pizzaValue" class="main-text text-dark my-2">$ 5</p>
                     </div>
                 </div>
                 <div id="ingredientSelector" class="col-12 col-md-6 p-5 ">

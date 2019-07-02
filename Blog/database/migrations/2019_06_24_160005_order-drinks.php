@@ -18,6 +18,7 @@ class OrderDrinks extends Migration
             $table->bigInteger('drink_id')->unsigned();
             $table->integer('quantity');
             $table->double('total', 8, 2);
+            $table->timestamps();
         });
         Schema::table('order_drinks',function (Blueprint $table) {
             $table->foreign('order_id')->references('id')->on('orders');

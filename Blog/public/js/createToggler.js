@@ -1,4 +1,4 @@
-var pizzaCost = 10;
+var pizzaCost = 5;
 var step = 1;
 var drinkSelected = 0;
 var sizeCost = 4;
@@ -40,7 +40,7 @@ function nextStep() {
 function receiptLoader() {
     let ingredientListTog = [];
     let selectedIngredients = $('#ingredientSelector > ul > li > button.selected');
-    let totalCost = 10;
+    let totalCost = 5;
     selectedIngredients.map(function(index){ingredientListTog.push(selectedIngredients[index].id);});
 
     $('#receipt').html('');

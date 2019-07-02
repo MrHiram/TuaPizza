@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pizza;
+use App\Ingredient;
+use App\Pizza_ingredient;
 
 class CreateController extends Controller
 {
@@ -82,12 +85,26 @@ class CreateController extends Controller
         //
     }
     public function submitOrder(Request $request){
+        $basePrice = 5;
+        $totalPrice = 0;
         $data  = $request->all();
-
-        // $data['imagebtn']->store('', 'imgstorage');
-        /*
-        Stripe 
-        */
-        return  response()->json(['success' => 'true']);
+        $pizza = new Pizza();
+        $pizzaIngredientIndex = Ingredient::All();
+        $nextId = $pizza->getNextId();
+        $pizza -> save();
+        foreach ($data['ingredientList'] as $ing) {
+            $pizzaIngredient = new Pizza_ingredient();
+            $pizzaIngredient->pizza_id = $nextId;
+            foreach ($pizzaIngredientIndex as $ingIndex) {
+                if($ingIndex->tag_id == $ing){
+                    $pizzaIngredient->ingredient_id = $ingIndex->id;
+                    $totalPrice += $ingIndex->price;
+                }
+            }
+            $pizzaIngredient->save();
+        }
+        $totalPrice += $basePrice;
+        Pizza::whereId($nextId)->update(['total_price' => $totalPrice,'base_price' => $basePrice]);
+        return  $request;
     }
 }
