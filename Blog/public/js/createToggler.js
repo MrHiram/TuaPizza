@@ -1,10 +1,11 @@
-var pizzaCost = 10;
+var pizzaCost = 5;
 var step = 1;
 var drinkSelected = 0;
 var sizeCost = 4;
 var number = 1;
 var drinksCost = 4;
 var totalCost = 14;
+
 $('document').ready(function(){
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
@@ -32,8 +33,46 @@ function nextStep() {
             $('#paymentForm').css('display', 'flex');
             $('#btn-forward').css('display', 'none');
             $('.step-indicator').children('span').text('Comer');    
+            receiptLoader();
             break;
     }
+}
+function receiptLoader() {
+    let ingredientListTog = [];
+    let selectedIngredients = $('#ingredientSelector > ul > li > button.selected');
+    let totalCost = 5;
+    selectedIngredients.map(function(index){ingredientListTog.push(selectedIngredients[index].id);});
+
+    $('#receipt').html('');
+    ingredientListTog.forEach(element => {
+        let ingButton = $('#ingredientSelector > ul > li > button#'+element);
+        let tr = "<tr><td class='pl-3'>"+ingButton.children('p').text()+"</td><td>$ "+ingButton.val()+"</td></tr>";
+        $('#receipt').append(tr);
+        totalCost += parseInt(ingButton.val());
+    });
+    $('#totalCost').html("$ "+totalCost);
+    if($('#inputGroupSelect03').val()!=0){
+        let tr = "<tr><th scope='col' class='main-text medium text-dark'>Bebidas</th><th scope='col' class='main-text medium text-dark'>"+$('#drinksValue').text()+"</th></tr>";
+        $('#receipt').append(tr);
+        let drinkCostTog;
+        switch($('#inputGroupSelect02').val()){
+            case '1':
+                drinkCostTog = 4;
+                break;
+            case '2':
+                drinkCostTog = 2;
+                break;
+            case '3':
+                drinkCostTog = 1;
+                break;
+        }
+        totalCost += (drinkCostTog*parseInt($('#inputGroupSelect03').val()));
+    }
+    tr = "<tr><th scope='col' class='main-text medium text-dark'>Express</th><th scope='col' class='main-text medium text-dark'>$ 3</th></tr>";
+    $('#receipt').append(tr);
+    totalCost += 3;
+    tr = "<tr><th scope='col' class='main-text medium text-dark'>Total</th><th scope='col' class='main-text medium text-dark'>$ "+totalCost+"</th></tr>";
+    $('#receipt').append(tr);
 }
 function lastStep() {
     if(step!=1){

@@ -19,6 +19,7 @@ class Receipts extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->double('total', 8, 2);
             $table->double('express', 8, 2);
+            $table->timestamps();
         });
         Schema::table('receipts',function (Blueprint $table) {
             $table->foreign('order_id')->references('id')->on('orders');

@@ -12,11 +12,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-<<<<<<< HEAD
         $this->call(ingredientSeeder::class);
         $this->call(drinkSeeder::class);
-=======
-        $this->call(IngredientSeeder::class);
->>>>>>> auth3
     }
 }
