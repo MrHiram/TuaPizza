@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Pizza;
 use App\Ingredient;
 use App\Pizza_ingredient;
+use App\Order;
+use App\Order_drink;
 
 class CreateController extends Controller
 {
@@ -90,21 +93,55 @@ class CreateController extends Controller
         $data  = $request->all();
         $pizza = new Pizza();
         $pizzaIngredientIndex = Ingredient::All();
-        $nextId = $pizza->getNextId();
+        $pizzaNextId = $pizza->getNextId();
         $pizza -> save();
-        foreach ($data['ingredientList'] as $ing) {
-            $pizzaIngredient = new Pizza_ingredient();
-            $pizzaIngredient->pizza_id = $nextId;
-            foreach ($pizzaIngredientIndex as $ingIndex) {
-                if($ingIndex->tag_id == $ing){
-                    $pizzaIngredient->ingredient_id = $ingIndex->id;
-                    $totalPrice += $ingIndex->price;
+        if (array_key_exists('ingredientList', $data)) {
+            foreach ($data['ingredientList'] as $ing) {
+                $pizzaIngredient = new Pizza_ingredient();
+                $pizzaIngredient->pizza_id = $pizzaNextId;
+                foreach ($pizzaIngredientIndex as $ingIndex) {
+                    if($ingIndex->tag_id == $ing){
+                        $pizzaIngredient->ingredient_id = $ingIndex->id;
+                        $totalPrice += $ingIndex->price;
+                    }
                 }
+                $pizzaIngredient->save();
             }
-            $pizzaIngredient->save();
         }
         $totalPrice += $basePrice;
-        Pizza::whereId($nextId)->update(['total_price' => $totalPrice,'base_price' => $basePrice]);
+        Pizza::whereId($pizzaNextId)->update(['total_price' => $totalPrice,'base_price' => $basePrice]);
+
+        $order = new Order();
+        if(Auth::check()){
+            $order->user_id = Auth::user()->id;
+        }else{
+            $order->user_id = 4;
+        }
+        $order->pizza_id = $pizzaNextId;
+        $direction = $data['directionList'][0].' '.$data['directionList'][1].' '.$data['directionList'][2];
+        $order->direction = $direction;
+        $order->phone = $data['directionList'][3];
+        $orderNextId = $order->getNextId();
+        $order->save();
+
+        if(array_key_exists('drinksList', $data)){
+            $orderDrink = new Order_drink();
+            $orderDrink->order_id = $orderNextId;
+            $orderDrink->drink_id = $data['drinksList'][0]+1;
+            $orderDrink->quantity = $data['drinksList'][2];
+            switch ($data['drinksList'][1]) {
+                case '1':
+                    $orderDrink->total = $data['drinksList'][2]*4;
+                    break;
+                case '2':
+                    $orderDrink->total = $data['drinksList'][2]*2;
+                    break;
+                case '3':
+                    $orderDrink->total = $data['drinksList'][2]*1;
+                    break;            
+            }
+            $orderDrink->save();
+        }
         return  $request;
     }
 }

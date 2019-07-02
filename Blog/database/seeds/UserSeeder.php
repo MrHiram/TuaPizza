@@ -17,6 +17,7 @@ class UserSeeder extends Seeder
             ['sudo','sudo@su.com','12345678','1','avatar.png',],
             ['Hiram','hiram@gmail.com','12345678','1','avatar.png',],
             ['Priscilla','pri@gmail.com','12345678','1','avatar.png',],
+            ['Jane Doe','janedoe@gmail.com','12345678','2','avatar.png',],
         ];
 
          $len =count($users);
