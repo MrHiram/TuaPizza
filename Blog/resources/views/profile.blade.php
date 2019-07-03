@@ -16,7 +16,7 @@
         <div class="col-2 bg-dark profile-sidebar text-white d-none d-lg-block py-5">
             <div class="row mb-3 justify-content-center">
                 <div class="h4 text-white bg-danger rounded-circle text-center btn width"><i class="far fa-user"></i></div>
-                <p class="m-3">Hiram González C.</p>
+                <p class="m-3"> {{Auth::user()->name}}</p>
             </div>
             <div class="row ">
                 <div class="col-3 offset-1 text-center">
@@ -39,7 +39,45 @@
             <div class="row bg-white shadow-sm margin-right">
                 <h2 id="indicator" class="h3 pl-5 pt-2">Facturas</h2>
             </div>
-            <div id="receipt" class="card-columns">
+            <div id='receipt' class='card-columns'>
+                    <?php
+                    
+                    foreach ($receiptDB as $receipt){
+                        if($receipt->user_id==Auth::user()->id){
+                            echo "
+                                    <div class='card card-width mt-5'>
+                                    <div class='card-body'>
+                                        <h5 class='card-title text-primary main-text medium bold'>Factura #".$receipt["id"]."</h5>
+                                        <h6 class='card-subtitle mb-2 text-muted mb-3'>".$receipt["created_at"]."</h6>
+                                        <table class='table'>
+                                            <thead>
+                                            <tbody>
+                                                <tr>
+                                                <th scope='row'>x1</th>
+                                                <td>Pizza personalizada</td>
+                                                </tr>
+                                                <tr>
+                                                <th scope='row'>x1</th>
+                                                <td>Coca-Cola 3L</td>
+                                                </tr>
+                                                <tr>
+                                                <th scope='row'>x1</th>
+                                                <td>Express</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p class='main-text text-dark'><span class='main-text text-dark bold'>Total: </span> $".$receipt["total"]."</p>
+                                    </div>
+                                    <div class='card-footer text-center'>
+                                        <button class='btn btn-primary btn-lg' >Más Info</button>
+                                    </div>
+                                   
+                                </div>";
+                        }
+                     }
+                     ?>
+                      </div>
+                    <!--
                 <div class="card card-width mt-5">
                     <div class="card-body">
                         <h5 class="card-title text-primary main-text medium bold">Factura #1024</h5>
@@ -121,34 +159,7 @@
                         <button class="btn btn-primary btn-lg" >Más Info</button>
                     </div>
                 </div>
-                <div class="card card-width mt-5">
-                    <div class="card-body">
-                        <h5 class="card-title text-primary main-text medium bold">Factura #1024</h5>
-                        <h6 class="card-subtitle mb-2 text-muted mb-3">12/5/2019 23:43h</h6>
-                        <table class="table">
-                            <thead>
-                            <tbody>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Pizza personalizada</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Coca-Cola 3L</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Express</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <p class="main-text text-dark"><span class="main-text text-dark bold">Total: </span> $21</p>
-                    </div>
-                    <div class="card-footer text-center">
-                        <button class="btn btn-primary btn-lg" >Más Info</button>
-                    </div>
-                </div>
-            </div>
+            </div>-->
             
             <div id="history" class="card-columns disp-none">
                 <div class="card card-width mt-5">

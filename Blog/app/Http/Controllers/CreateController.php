@@ -9,6 +9,7 @@ use App\Ingredient;
 use App\Pizza_ingredient;
 use App\Order;
 use App\Order_drink;
+use App\Receipt;
 
 class CreateController extends Controller
 {
@@ -93,7 +94,7 @@ class CreateController extends Controller
         $data  = $request->all();
         $pizza = new Pizza();
         $pizzaIngredientIndex = Ingredient::All();
-        $pizzaNextId = $pizza->getNextId();
+        $pizzaNextId = $pizza->getNextId();   
         $pizza -> save();
         if (array_key_exists('ingredientList', $data)) {
             foreach ($data['ingredientList'] as $ing) {
@@ -142,6 +143,19 @@ class CreateController extends Controller
             }
             $orderDrink->save();
         }
+
+        $receipt = new Receipt();
+        if(Auth::check()){
+            $receipt->user_id = Auth::user()->id;
+        }else{
+            $receipt->user_id = 4;
+        }
+        $receipt->order_id = $orderNextId;
+        $receipt->total = $totalPrice+$basePrice+2;
+        $receipt->express = '3';
+        $receipt->save();
+
+       
         return  $request;
     }
 }

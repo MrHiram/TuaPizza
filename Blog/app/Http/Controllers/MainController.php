@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Ingredient;
 use App\Drink;
+use App\Receipt;
+use App\Order;
+use App\Order_drink;
 
 class MainController extends Controller
 {
@@ -85,7 +88,11 @@ class MainController extends Controller
     }
 
     public function userProfile(){
-        return view('profile');
+        $receiptDB = Receipt::All();    
+        $orderDB = Order::All();
+        $orderDrinksDB = Order_drink::All();
+        $drinksDB = Drink::All();
+        return view('profile', compact('receiptDB', 'orderDB', 'orderDrinksDB','drinksDB'));
     }
     public function authenticator(){
         return view('authenticator');
