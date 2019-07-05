@@ -35,7 +35,7 @@
             <div class="row bg-white shadow-sm margin-right">
                 <h2 id="indicator" class="h3 pl-5 pt-2">Facturas</h2>
             </div>
-            <div id='receipt' class='card-columns'>
+            <div id='receipt' class='d-flex flex-wrap'>
                 <?php
                     $bebida= array();
                     $exists;
@@ -60,7 +60,7 @@
                     $contador =0;
                     foreach ($receiptDB as $receipt){
                         echo"
-                            <div class='card card-width mt-5'>
+                            <div class='card card-width ml-3 my-4'>
                                 <div class='card-body'>
                                     <h5 class='card-title text-primary main-text medium bold'>Factura #".$receipt["id"]."</h5>
                                     <h6 class='card-subtitle mb-2 text-muted mb-3'>".$receipt["created_at"]."</h6>
@@ -140,6 +140,7 @@
                                                         <button type='button' class='btn btn-secondary' data-dismiss='modal'>Aceptar</button>
                                                         <form class='mt-3'action='/create' method='post'>
                                                             <input type='hidden' name='id' value='".$pizza[0]['id']."'>
+                                                            <input type='hidden' name='price' value='$ ".$pizza[0]['total_price']."'>
                                                             ";
                                                             $i=0;
                                                             foreach ($ingreientsPost as $key) {

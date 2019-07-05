@@ -87,7 +87,7 @@ class IngredientController extends Controller
         File::delete($filePath);
         $filePath = 'img/'.$ingredient->pizza_picture;
         File::delete($filePath);
-        Ingredient::findOrFail($ingredient->id)->delete();
+        Ingredient::whereId($id)->update(['deleted' => 'y']);
         return redirect('/admin')->with('success', '¡Eliminado con exito!');
     }
 

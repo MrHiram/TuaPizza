@@ -22,6 +22,7 @@ class Ingredients extends Migration
             $table->string('category');
             $table->string('tag_id');
             $table->string('z_index');
+            $table->char('deleted')->default('n');
             $table->timestamps();
         });
     }

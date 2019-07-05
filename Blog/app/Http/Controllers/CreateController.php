@@ -93,14 +93,15 @@ class CreateController extends Controller
         $ingredientsDB = Ingredient::All();
         $drinksDB = Drink::All();
         $ingredientList = $request->all();
+        $price = $ingredientList['price'];
         $ingedientsIds = [];
         $contador=0;
         foreach ($ingredientList as $ingedientId) {
             if(array_key_exists("ingredients".$contador , $ingredientList)){
                 array_push($ingedientsIds, $ingredientList["ingredients".$contador++]);
-            } 
+            }
         }
-        return view('create', compact('ingredientsDB', 'drinksDB','ingedientsIds'));
+        return view('create', compact('ingredientsDB', 'drinksDB','ingedientsIds', 'price'));
     }
     public function submitOrder(Request $request){
         $basePrice = 5;

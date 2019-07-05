@@ -103,6 +103,7 @@
                     </thead>
                     <?php $contador = 0 ?>
                     @foreach($ingredientsDB as $ingredientDB)
+                    @if ($ingredientDB->deleted != 'y')
                         <tbody>
                             <tr>
                             <th scope="row">{{++$contador}}</th>
@@ -121,6 +122,7 @@
                             </td>
                             </tr>
                         </tbody>
+                    @endif
                     @endforeach
                 </table>                          
             </div>

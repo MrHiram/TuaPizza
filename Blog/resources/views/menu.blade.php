@@ -16,7 +16,14 @@
                     <div class="card-body">
                         <h4 class="h4 card-title">Especial de la casa</h4>
                         <p class="card-text main-text medium text-dark">Nuestra pizza especial de la casa es la mejor combinación para todos los gustos.</p>
-                        <button class="btn btn-red col-12 mt-3">Probar</button>
+                        <form class='mt-3'action='/create' method='post'>
+                            <input type='hidden' name='ingredients0' value='5'>
+                            <input type='hidden' name='ingredients1' value='13'>
+                            <input type='hidden' name='ingredients2' value='11'>
+                            <input type='hidden' name='price' value='$ 11'>
+                            @csrf
+                            <button class='btn btn-red col-12 mt-3' type='submit'>Probar</button>
+                        </form>
                     </div>
                 </div>
                 <div class="card p-0 my-5">
@@ -24,7 +31,13 @@
                     <div class="card-body">
                         <h4 class="h4 card-title">Pepperoni</h4>
                         <p class="card-text main-text medium text-dark">Nuestra pizza de pepperoni, un clasico y Tua Pizza ofrece la de mejor calidad.</p>
-                        <button class="btn btn-red col-12 mt-3">Probar</button>
+                        <form class='mt-3'action='/create' method='post'>
+                            <input type='hidden' name='ingredients0' value='16'>
+                            <input type='hidden' name='ingredients1' value='18'>
+                            <input type='hidden' name='price' value='$ 11'>
+                            @csrf
+                            <button class='btn btn-red col-12 mt-3' type='submit'>Probar</button>
+                        </form>
                     </div>
                 </div>
                 <div class="card p-0 my-5">
@@ -32,7 +45,12 @@
                     <div class="card-body">
                         <h4 class="h4 card-title">Simple</h4>
                         <p class="card-text main-text medium text-dark">Nuestra pizza simple es especial para aquellos que prefieren una pizza sencilla.</p>
-                        <button class="btn btn-red col-12 mt-3">Probar</button>
+                        <form class='mt-3'action='/create' method='post'>
+                            <input type='hidden' name='ingredients0' value='10'>
+                            <input type='hidden' name='price' value='$ 6'>
+                            @csrf
+                            <button class='btn btn-red col-12 mt-3' type='submit'>Probar</button>
+                        </form>
                     </div>
                 </div>
             </div>
