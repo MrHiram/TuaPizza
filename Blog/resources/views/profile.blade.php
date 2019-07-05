@@ -22,15 +22,11 @@
                 <div class="col-3 offset-1 text-center">
                     <ul class="list-unstyled">
                         <li class="py-2"><a href="#" onClick="receipt()" class="main-text medium text-white"><i class="fas fa-file-invoice-dollar"></i></a></li>
-                        <li class="py-2"><a href="#" onClick="history()" class="main-text medium text-white"><i class="fas fa-history"></i></a></li>
-                        <li class="py-2"><a href="#" onClick="favorites()" class="main-text medium text-white"><i class="fas fa-star"></i></a></li>
                     </ul>
                 </div>
                 <div class="col-6 text-left">
                     <ul class="list-unstyled">
                         <li class="py-2"><a href="#" onClick="receipt()" class="main-text medium text-white">Facturas</a></li>
-                        <li class="py-2"><a href="#" onClick="history()" class="main-text medium text-white">Historial</a></li>
-                        <li class="py-2"><a href="#" onClick="favorites()" class="main-text medium text-white">Favoritas</a></li>
                     </ul>
                 </div>
             </div>
@@ -40,7 +36,7 @@
                 <h2 id="indicator" class="h3 pl-5 pt-2">Facturas</h2>
             </div>
             <div id='receipt' class='card-columns'>
-                    <?php
+                <?php
                     $bebida= array();
                     $exists;
                     foreach($orderDB as $order){
@@ -61,234 +57,109 @@
                             }
                         }
                     }
-                   
                     $contador =0;
                     foreach ($receiptDB as $receipt){
-                        if($receipt->user_id==Auth::user()->id){
-                            
-                            echo "
-                                    <div class='card card-width mt-5'>
-                                    <div class='card-body'>
-                                        <h5 class='card-title text-primary main-text medium bold'>Factura #".$receipt["id"]."</h5>
-                                        <h6 class='card-subtitle mb-2 text-muted mb-3'>".$receipt["created_at"]."</h6>
-                                        <table class='table'>
-                                            <thead>
-                                            <tbody>
-                                                <tr>
-                                                <th scope='row'>x1</th>
-                                                <td>Pizza personalizada</td>
-                                                </tr>";
-                                                if ($bebida[$contador]!="none") {
-                                                    echo "<tr><th scope='row'>x1</th><td>"; 
-                                                    echo $bebida[$contador];
-                                                    echo"</td></tr>";
-                                                }else{
-                                                    echo "<tr><th scope='row'>x0</th><td>Sin bebida</td></tr>"; 
-                                                }
-                                                $contador++;    
-                                                echo"<tr>
-                                                <th scope='row'>x1</th>
-                                                <td>Express</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <p class='main-text text-dark'><span class='main-text text-dark bold'>Total: </span> $".$receipt["total"]."</p>
-                                    </div>
-                                    <div class='card-footer text-center'>
-                                        <button class='btn btn-primary btn-lg' >Más Info</button>
-                                    </div>
-                                   
-                                </div>";
-                             }
+                        echo"
+                            <div class='card card-width mt-5'>
+                                <div class='card-body'>
+                                    <h5 class='card-title text-primary main-text medium bold'>Factura #".$receipt["id"]."</h5>
+                                    <h6 class='card-subtitle mb-2 text-muted mb-3'>".$receipt["created_at"]."</h6>
+                                    <table class='table'>
+                                        <thead>
+                                        <tbody>
+                                            <tr>
+                                            <th scope='row'>x1</th>
+                                            <td>Pizza personalizada</td>
+                                            </tr>";
+                                            if ($bebida[$contador]!="none") {
+                                                echo "<tr><th scope='row'>x1</th><td>"; 
+                                                echo $bebida[$contador];
+                                                echo"</td></tr>";
+                                            }else{
+                                                echo "<tr><th scope='row'>x0</th><td>Sin bebida</td></tr>"; 
+                                            } 
+                                            echo"<tr>
+                                            <th scope='row'>x1</th>
+                                            <td>Express</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p class='main-text text-dark'><span class='main-text text-dark bold'>Total: </span> $".$receipt["total"]."</p>
+                                </div>
+                                <div class='card-footer text-center'>
+                                    <button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#Modal".$contador."'>Más Info</button>
+                                </div>                                   
+                            </div>";
+                            $selectedOrder;
+                            foreach ($orderDB as $order) {
+                                if($order['id']==$receipt['order_id']){
+                                    $selectedOrder = $order;
+                                    break;
+                                }
+                            }
+                            foreach ($pizzaDB as $pizza) {
+                                $ingreientsPost = [];
+                                if($pizza[0]['id'] == $selectedOrder['pizza_id']){
+                                    echo "
+                                        <div class='modal fade' id='Modal".$contador."' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+                                            <div class='modal-dialog' role='document'>
+                                                <div class='modal-content'>
+                                                    <div class='modal-header pt-3 pb-0'>
+                                                        <div>
+                                                            <h5 class='modal-title text-primary main-text medium bold'>Factura #".$receipt["id"]."</h5>
+                                                            <h6 class='text-muted'>".$receipt["created_at"]."</h6>
+                                                        </div>
+                                                        <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                                                            <span aria-hidden='true'>&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class='modal-body pb-0'>
+                                                        <h5 class='text-secondary'>Ingredientes</h5>
+                                                        <table class='table'>
+                                                            <thead>
+                                                            <tbody>";
+                                                                foreach ($pizzaIngredientDB as $pizzaIngredients) {
+                                                                    foreach ($pizzaIngredients as $pizzaIngredient ) {
+                                                                        if($pizzaIngredient['pizza_id'] == $pizza[0]['id']){
+                                                                            echo "<tr><th scope='row'>x1</th><td>";
+                                                                            foreach ($ingredientDB as $ingredientName ) {
+                                                                                if($ingredientName['id']==$pizzaIngredient['ingredient_id']){
+                                                                                    echo $ingredientName['name'];
+                                                                                    array_push($ingreientsPost, $ingredientName['id']);
+                                                                                }
+                                                                            }
+                                                                            echo "</td></tr>"; 
+                                                                        }
+                                                                    }
+                                                                } 
+                                    echo"
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class='modal-footer'>
+                                                        <button type='button' class='btn btn-secondary' data-dismiss='modal'>Aceptar</button>
+                                                        <form class='mt-3'action='/create' method='post'>
+                                                            <input type='hidden' name='id' value='".$pizza[0]['id']."'>
+                                                            ";
+                                                            $i=0;
+                                                            foreach ($ingreientsPost as $key) {
+                                                                echo "<input type='hidden' name='ingredients".$i++."' value='".$key."'>";
+                                                            }
+                                                            ?>
+                                                            @csrf
+                                                            <?php echo "<button class='btn btn-primary' type='submit'>Crear</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>";
+                                }
+                            }
                    
-                     }
-                     ?>
-                      </div>        
-            <div id="history" class="card-columns disp-none">
-                <div class="card card-width mt-5">
-                    <div class="card-body">
-                        <h5 class="card-title text-primary main-text medium bold">Pizza personalizada</h5>
-                        <h6 class="card-subtitle mb-2 text-muted mb-3">Factura #1024</h6>
-                        <table class="table">
-                            <thead>
-                            <tbody>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Hongos</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Tomate</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Albahaca</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Mozarrella</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="card-footer text-center">
-                        <button class="btn btn-primary btn-lg">Crear</button>
-                    </div>
-                </div>
-                <div class="card card-width mt-5">
-                    <div class="card-body">
-                        <h5 class="card-title text-primary main-text medium bold">Pizza personalizada</h5>
-                        <h6 class="card-subtitle mb-2 text-muted mb-3">Factura #1024</h6>
-                        <table class="table">
-                            <thead>
-                            <tbody>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Hongos</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Tomate</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Albahaca</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Mozarrella</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="card-footer text-center">
-                        <button class="btn btn-primary btn-lg">Crear</button>
-                    </div>
-                </div>
-                <div class="card card-width mt-5">
-                    <div class="card-body">
-                        <h5 class="card-title text-primary main-text medium bold">Pizza personalizada</h5>
-                        <h6 class="card-subtitle mb-2 text-muted mb-3">Factura #1024</h6>
-                        <table class="table">
-                            <thead>
-                            <tbody>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Hongos</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Tomate</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Albahaca</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Mozarrella</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="card-footer text-center">
-                        <button class="btn btn-primary btn-lg">Crear</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div id="favorites" class="card-columns disp-none">
-                <div class="card card-width mt-5">
-                    <div class="card-body">
-                        <h5 class="card-title text-primary main-text medium bold">Pizza personalizada</h5>
-                        <h6 class="card-subtitle mb-2 text-muted mb-3">Pedida 10 veces</h6>
-                        <table class="table">
-                            <thead>
-                            <tbody>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Hongos</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Tomate</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Albahaca</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Mozarrella</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="card-footer text-center">
-                        <button class="btn btn-primary btn-lg">Crear</button>
-                    </div>
-                </div>
-                <div class="card card-width mt-5">
-                    <div class="card-body">
-                        <h5 class="card-title text-primary main-text medium bold">Pizza personalizada</h5>
-                        <h6 class="card-subtitle mb-2 text-muted mb-3">Pedida 10 veces</h6>
-                        <table class="table">
-                            <thead>
-                            <tbody>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Hongos</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Tomate</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Albahaca</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Mozarrella</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="card-footer text-center">
-                        <button class="btn btn-primary btn-lg">Crear</button>
-                    </div>
-                </div>
-                <div class="card card-width mt-5">
-                    <div class="card-body">
-                        <h5 class="card-title text-primary main-text medium bold">Pizza personalizada</h5>
-                        <h6 class="card-subtitle mb-2 text-muted mb-3">Pedida 10 veces</h6>
-                        <table class="table">
-                            <thead>
-                            <tbody>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Hongos</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Tomate</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Albahaca</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">x1</th>
-                                <td>Mozarrella</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="card-footer text-center">
-                        <button class="btn btn-primary btn-lg">Crear</button>
-                    </div>
-                </div>
-            </div>
+                        $contador++;   
+                    }
+                ?>
+            </div>        
         </div>
     </div>
     </section>

@@ -18,7 +18,18 @@
                         <img src="img/plain-pizza.jpg" class="img-fluid position-absolute w-100 pr-5 pr-lg-0" alt="" style="z-index: 0">
                         <?php
                         foreach($ingredientsDB as $ingredientDB){
-                            echo "<img src='img/".$ingredientDB['pizza_picture']."' class='img-fluid position-absolute w-100 disp-none pr-5 pr-lg-0' alt='' style='z-index:  ".$ingredientDB['z_index']."' id='".$ingredientDB['tag_id']."'>";
+                            echo "<img src='img/".$ingredientDB['pizza_picture']."' class='img-fluid position-absolute w-100 ";
+                            if(isset ($ingedientsIds)){
+                                if(in_array($ingredientDB['id'], $ingedientsIds)){
+                                    echo 'disp-flex ';
+                                }else{
+                                    echo 'disp-none ';
+                                }
+                            }else{
+                                echo 'disp-none ';
+                            }
+                            
+                            echo "pr-5 pr-lg-0' alt='' style='z-index:  ".$ingredientDB['z_index']."' id='".$ingredientDB['tag_id']."'>";
                         }
                         ?>
                     </div>
@@ -34,7 +45,19 @@
                         <?php
                         foreach($ingredientsDB as $ingredientDB){
                             if($ingredientDB['category'] == 'Vegetales'){
-                                echo "<li class='p-0 mx-4 my-4 my-sm-2'><button onClick='addIngredient(this)' value='".$ingredientDB['price']."' data-toggle='tooltip' data-placement='top' title='".$ingredientDB['name']."' id='".$ingredientDB['tag_id']."' class='btn bg-white width btn-outline-light rounded-circle shadow-sm p-0'><img class='img-fluid' src='/img/".$ingredientDB['btn_picture']."' alt=''><p class='d-block d-sm-none main-text py-2 text-nowrap'>".$ingredientDB['name']."</p></button></li>";
+                                echo "<li class='p-0 mx-4 my-4 my-sm-2'>
+                                        <button onClick='addIngredient(this)' value='".$ingredientDB['price']."' data-toggle='tooltip' data-placement='top' title='".$ingredientDB['name']."' id='".$ingredientDB['tag_id']."' 
+                                            class='btn bg-white width btn-outline-light rounded-circle shadow-sm p-0 ";
+                                            if(isset ($ingedientsIds)){
+                                                if(in_array($ingredientDB['id'], $ingedientsIds)){
+                                                    echo 'selected';
+                                                }
+                                            }                                            
+                                echo"
+                                            '>
+                                            <img class='img-fluid' src='/img/".$ingredientDB['btn_picture']."' alt=''>
+                                            <p class='d-block d-sm-none main-text py-2 text-nowrap'>".$ingredientDB['name']."</p>
+                                        </button></li>";
                             }
                         }
                         ?>              
@@ -45,7 +68,20 @@
                         <?php
                         foreach($ingredientsDB as $ingredientDB){
                             if($ingredientDB['category'] == 'Frutas'){
-                                echo "<li class='p-0 mx-4 my-4 my-sm-2'><button onClick='addIngredient(this)' value='".$ingredientDB['price']."' data-toggle='tooltip' data-placement='top' title='".$ingredientDB['name']."' id='".$ingredientDB['tag_id']."' class='btn bg-white width btn-outline-light rounded-circle shadow-sm p-0'><img class='img-fluid' src='/img/".$ingredientDB['btn_picture']."' alt=''><p class='d-block d-sm-none main-text py-2 text-nowrap'>".$ingredientDB['name']."</p></button></li>";
+                                echo "<li class='p-0 mx-4 my-4 my-sm-2'>
+                                        <button onClick='addIngredient(this)' value='".$ingredientDB['price']."' data-toggle='tooltip' data-placement='top' title='".$ingredientDB['name']."' id='".$ingredientDB['tag_id']."' 
+                                        class='btn bg-white width btn-outline-light rounded-circle shadow-sm p-0 ";
+                                        if(isset ($ingedientsIds)){
+                                            if(in_array($ingredientDB['id'], $ingedientsIds)){
+                                                echo 'selected';
+                                            }
+                                        }        
+                                echo"
+                                        '>
+                                        
+                                            <img class='img-fluid' src='/img/".$ingredientDB['btn_picture']."' alt=''>
+                                            <p class='d-block d-sm-none main-text py-2 text-nowrap'>".$ingredientDB['name']."</p>
+                                        </button></li>";
                             }
                         }
                         ?>   
@@ -56,7 +92,20 @@
                         <?php
                         foreach($ingredientsDB as $ingredientDB){
                             if($ingredientDB['category'] == 'Especies'){
-                                echo "<li class='p-0 mx-4 my-4 my-sm-2'><button onClick='addIngredient(this)' value='".$ingredientDB['price']."' data-toggle='tooltip' data-placement='top' title='".$ingredientDB['name']."' id='".$ingredientDB['tag_id']."' class='btn bg-white width btn-outline-light rounded-circle shadow-sm p-0'><img class='img-fluid' src='/img/".$ingredientDB['btn_picture']."' alt=''><p class='d-block d-sm-none main-text py-2 text-nowrap'>".$ingredientDB['name']."</p></button></li>";
+                                echo "<li class='p-0 mx-4 my-4 my-sm-2'>
+                                        <button onClick='addIngredient(this)' value='".$ingredientDB['price']."' data-toggle='tooltip' data-placement='top' title='".$ingredientDB['name']."' id='".$ingredientDB['tag_id']."' 
+                                        class='btn bg-white width btn-outline-light rounded-circle shadow-sm p-0 ";
+                                        if(isset ($ingedientsIds)){
+                                            if(in_array($ingredientDB['id'], $ingedientsIds)){
+                                                echo 'selected';
+                                            }
+                                        }        
+                                echo"
+                                        '>
+                                        
+                                        <img class='img-fluid' src='/img/".$ingredientDB['btn_picture']."' alt=''>
+                                        <p class='d-block d-sm-none main-text py-2 text-nowrap'>".$ingredientDB['name']."</p>
+                                    </button></li>";
                             }
                         }
                         ?>
@@ -67,7 +116,19 @@
                         <?php
                         foreach($ingredientsDB as $ingredientDB){
                             if($ingredientDB['category'] == 'Carnes'){
-                                echo "<li class='p-0 mx-4 my-4 my-sm-2'><button onClick='addIngredient(this)' value='".$ingredientDB['price']."' data-toggle='tooltip' data-placement='top' title='".$ingredientDB['name']."' id='".$ingredientDB['tag_id']."' class='btn bg-white width btn-outline-light rounded-circle shadow-sm p-0'><img class='img-fluid' src='/img/".$ingredientDB['btn_picture']."' alt=''><p class='d-block d-sm-none main-text py-2 text-nowrap'>".$ingredientDB['name']."</p></button></li>";
+                                echo "<li class='p-0 mx-4 my-4 my-sm-2'>
+                                        <button onClick='addIngredient(this)' value='".$ingredientDB['price']."' data-toggle='tooltip' data-placement='top' title='".$ingredientDB['name']."' id='".$ingredientDB['tag_id']."' 
+                                        class='btn bg-white width btn-outline-light rounded-circle shadow-sm p-0 ";
+                                        if(isset ($ingedientsIds)){
+                                            if(in_array($ingredientDB['id'], $ingedientsIds)){
+                                                echo 'selected';
+                                            }
+                                        }        
+                                echo "
+                                        '>
+                                        <img class='img-fluid' src='/img/".$ingredientDB['btn_picture']."' alt=''>
+                                        <p class='d-block d-sm-none main-text py-2 text-nowrap'>".$ingredientDB['name']."</p>
+                                    </button></li>";
                             }
                         }
                         ?>
@@ -78,7 +139,19 @@
                         <?php
                         foreach($ingredientsDB as $ingredientDB){
                             if($ingredientDB['category'] == 'Quesos'){
-                                echo "<li class='p-0 mx-4 my-4 my-sm-2'><button onClick='addIngredient(this)' value='".$ingredientDB['price']."' data-toggle='tooltip' data-placement='top' title='".$ingredientDB['name']."' id='".$ingredientDB['tag_id']."' class='btn bg-white width btn-outline-light rounded-circle shadow-sm p-0'><img class='img-fluid' src='/img/".$ingredientDB['btn_picture']."' alt=''><p class='d-block d-sm-none main-text py-2 text-nowrap'>".$ingredientDB['name']."</p></button></li>";
+                                echo "<li class='p-0 mx-4 my-4 my-sm-2'>
+                                        <button onClick='addIngredient(this)' value='".$ingredientDB['price']."' data-toggle='tooltip' data-placement='top' title='".$ingredientDB['name']."' id='".$ingredientDB['tag_id']."' 
+                                        class='btn bg-white width btn-outline-light rounded-circle shadow-sm p-0 ";
+                                        if(isset ($ingedientsIds)){
+                                            if(in_array($ingredientDB['id'], $ingedientsIds)){
+                                                echo 'selected';
+                                            }
+                                        }        
+                                echo "
+                                        '>
+                                        <img class='img-fluid' src='/img/".$ingredientDB['btn_picture']."' alt=''>
+                                        <p class='d-block d-sm-none main-text py-2 text-nowrap'>".$ingredientDB['name']."</p>
+                                    </button></li>";
                             }
                         }
                         ?>
@@ -93,7 +166,7 @@
                                         echo "<div id='drink-".$drinkDB['id']."' class='item col-4 col-lg-3 text-center order-1'><button disabled='disabled' class='btn p-0 selectedBtn' onclick='changeDrinkImg(this)' value=".$drinkDB['id']."><img class='col-12 px-0 image-fluid logo-size selected' src='img/".$drinkDB['picture']."'></button></div>";
                                         break;
                                     case '1':
-                                        echo "<div id='drink-".$drinkDB['id']."' class='item col-4 col-lg-3 text-center order-2'><button class='btn p-0' onclick='changeDrinkImg(this)' value=".$drinkDB['id']."><img class='col-12 px-0 image-fluid logo-size selected' src='img/".$drinkDB['picture']."'></button></div>";
+                                        echo "<div id='drink-".$drinkDB['id']."' class='item col-4 col-lg-3 text-center order-2'><button class='btn p-0' onclick='changeDrinkImg(this)' value=".$drinkDB['id']."><img class='col-12 px-0 image-fluid logo-size' src='img/".$drinkDB['picture']."'></button></div>";
                                         break;
                                     case '2':
                                         echo "<div id='drink-".$drinkDB['id']."' class='item col-4 col-lg-3 text-center'><button class='btn p-0' onclick='changeDrinkImg(this)' value=".$drinkDB['id']."><img class='col-12 px-0 image-fluid logo-size' src='img/".$drinkDB['picture']."'></button></div>";

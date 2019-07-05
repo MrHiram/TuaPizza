@@ -22,6 +22,7 @@ Route::get('/profile', 'MainController@userProfile');
 Route::get('/menu', 'MainController@menu');
 Route::get('/about', 'MainController@about');
 Route::get('/create', 'MainController@create');
+Route::post('/create', 'CreateController@load');
 Route::post('/submitOrder', 'CreateController@submitOrder');
 Route::post('/submitIngredient', 'IngredientController@submitIngredient');
 Route::post('/updateIngredient', 'IngredientController@updateIngredient');
