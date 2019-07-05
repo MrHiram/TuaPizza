@@ -15,6 +15,7 @@ class PizzaIngredients extends Migration
     {
         
         Schema::create('pizza_ingredients', function (Blueprint $table) {      
+            $table->bigIncrements('id');
             $table->bigInteger('pizza_id')->unsigned();   
             $table->bigInteger('ingredient_id')->unsigned();
             $table->timestamps();

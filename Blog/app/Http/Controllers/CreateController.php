@@ -10,6 +10,7 @@ use App\Pizza_ingredient;
 use App\Order;
 use App\Order_drink;
 use App\Receipt;
+use App\Drink;
 
 class CreateController extends Controller
 {
@@ -52,7 +53,7 @@ class CreateController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('create');
     }
 
     /**
@@ -87,6 +88,19 @@ class CreateController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function load(Request $request){
+        $ingredientsDB = Ingredient::All();
+        $drinksDB = Drink::All();
+        $ingredientList = $request->all();
+        $ingedientsIds = [];
+        $contador=0;
+        foreach ($ingredientList as $ingedientId) {
+            if(array_key_exists("ingredients".$contador , $ingredientList)){
+                array_push($ingedientsIds, $ingredientList["ingredients".$contador++]);
+            } 
+        }
+        return view('create', compact('ingredientsDB', 'drinksDB','ingedientsIds'));
     }
     public function submitOrder(Request $request){
         $basePrice = 5;

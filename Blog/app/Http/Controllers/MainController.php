@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 use App\Ingredient;
 use App\Drink;
 use App\Receipt;
 use App\Order;
 use App\Order_drink;
+use App\Pizza;
+use App\Pizza_ingredient;
 
 class MainController extends Controller
 {
@@ -88,11 +92,20 @@ class MainController extends Controller
     }
 
     public function userProfile(){
-        $receiptDB = Receipt::All();    
-        $orderDB = Order::All();
+        $receiptDB = Receipt::where('user_id', Auth::user()->id)->get();
+        $orderDB = Order::where('user_id', Auth::user()->id)->get();
+        $pizzaDB = [];
+        foreach ($orderDB as $order) {
+            array_push($pizzaDB, Pizza::where('id', $order['pizza_id'])->get());
+        }
+        $pizzaIngredientDB = [];
+        foreach ($pizzaDB as $pizza) {
+            array_push($pizzaIngredientDB, Pizza_ingredient::where('pizza_id', $pizza[0]['id'])->get());
+        }
+        $ingredientDB = Ingredient::All();
         $orderDrinksDB = Order_drink::All();
         $drinksDB = Drink::All();
-        return view('profile', compact('receiptDB', 'orderDB', 'orderDrinksDB','drinksDB'));
+        return view('profile', compact('receiptDB', 'orderDB', 'orderDrinksDB','drinksDB','pizzaDB','pizzaIngredientDB','ingredientDB'));
     }
     public function authenticator(){
         return view('authenticator');
