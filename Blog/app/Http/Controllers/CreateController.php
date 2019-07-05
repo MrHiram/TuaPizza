@@ -128,7 +128,7 @@ class CreateController extends Controller
         if(array_key_exists('drinksList', $data)){
             $orderDrink = new Order_drink();
             $orderDrink->order_id = $orderNextId;
-            $orderDrink->drink_id = $data['drinksList'][0]+1;
+            $orderDrink->drink_id = $data['drinksList'][0];
             $orderDrink->quantity = $data['drinksList'][2];
             switch ($data['drinksList'][1]) {
                 case '1':
