@@ -12,26 +12,26 @@
         <div class=" col-12 col-lg-8 offset-lg-2">
             <div class="card-deck">
                 <div class="card p-0 my-5">
-                    <img src='/img/pizza-1.jpeg' alt="" class="card-img-top">
+                    <img src='/img/casa.jpeg' alt="" class="card-img-top">
                     <div class="card-body">
-                        <h4 class="h4 card-title">Frambuesa Fusión</h4>
-                        <p class="card-text main-text medium text-dark">Nuestra deliciosa pizza dulce, es donde el almuerzo se vuelve postre.</p>
+                        <h4 class="h4 card-title">Especial de la casa</h4>
+                        <p class="card-text main-text medium text-dark">Nuestra pizza especial de la casa es la mejor combinación para todos los gustos.</p>
                         <button class="btn btn-red col-12 mt-3">Probar</button>
                     </div>
                 </div>
                 <div class="card p-0 my-5">
-                    <img class="card-img-top" src='/img/pizza-3.jpg' alt="">
+                    <img class="card-img-top" src='/img/peperroni.jpeg' alt="">
                     <div class="card-body">
-                        <h4 class="h4 card-title">Mariscaza</h4>
-                        <p class="card-text main-text medium text-dark">TuaPizza ha descubierto el secreto al unir los mariscos y la pizza. Es una exposión de sabor en tu boca.</p>
+                        <h4 class="h4 card-title">Pepperoni</h4>
+                        <p class="card-text main-text medium text-dark">Nuestra pizza de pepperoni, un clasico y Tua Pizza ofrece la de mejor calidad.</p>
                         <button class="btn btn-red col-12 mt-3">Probar</button>
                     </div>
                 </div>
                 <div class="card p-0 my-5">
-                    <img class="card-img-top" src='/img/pizza-2.jpg' alt="">
+                    <img class="card-img-top" src='/img/simple.jpeg' alt="">
                     <div class="card-body">
-                        <h4 class="h4 card-title">Hamburpizza</h4>
-                        <p class="card-text main-text medium text-dark">¿Hamburguesas o pizzas? TuaPizza ha combinado las comidas rápidas favoritas de nuestros clientes para un sabor único.</p>
+                        <h4 class="h4 card-title">Simple</h4>
+                        <p class="card-text main-text medium text-dark">Nuestra pizza simple es especial para aquellos que prefieren una pizza sencilla.</p>
                         <button class="btn btn-red col-12 mt-3">Probar</button>
                     </div>
                 </div>
