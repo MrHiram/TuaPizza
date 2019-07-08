@@ -164,7 +164,7 @@ class IngredientController extends Controller
             'name' =>'required|max:100',
             'price' =>'required|max:100',
             'category' =>'required||max:100',
-            'order' =>'required||max:100',
+            'z_index' =>'required||max:20',
         ]);            
 
         Ingredient::whereId($request->id)->update($validateData);

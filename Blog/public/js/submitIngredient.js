@@ -12,7 +12,7 @@ $("#formIngredient").submit(function(event){
             }    
         });
         $.ajax({
-            url: 'submitIngredient',
+            url: '/submitIngredient',
             type:'post',
             data:form_data,
             contentType: false,
